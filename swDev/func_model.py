@@ -16,12 +16,19 @@ print(type(input_data[0,0,0,0]))
 #import kernel weights and biases
 k_weights = np.load('data/kernel_weights.npy')
 conv_bias = np.load('data/conv_bias.npy')
-print(np.shape(k_weights[0,:,:,:]))
-print(k_weights[0,:,:,:])
-print(type(k_weights[0,0,0,0]))
-print(np.shape(conv_bias))
-print(conv_bias[0])
-print(type(conv_bias[0]))
+print("k_weights shape: ", np.shape(k_weights[0,:,:,:]))
+print("k_weights type: ",type(k_weights[0,0,0,0]))
+print("conv_bias shape: ", np.shape(conv_bias))
+print("conv_bias type: ",type(conv_bias[0]))
+
+#import fullyconnected weights and biases
+fc_weights = np.load('data/fc_weights.npy')
+fc_bias = np.load('data/fc_bias.npy')
+print("fc_weights shape: ", np.shape(fc_weights))
+print("fc_weights type: ", type(k_weights[0,0,0,0]))
+print("fc_bias shape: ", np.shape(fc_bias))
+print("fc_bias type: ", type(conv_bias[0]))
+
 
 def conv(I, K):
     res = np.zeros(shape=(1,26,26), dtype=np.int32)
