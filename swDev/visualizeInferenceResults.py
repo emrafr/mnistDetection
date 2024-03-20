@@ -33,6 +33,7 @@ interpreter.invoke()
 # Get the output tensor
 output_data = interpreter.get_tensor(output_details[0]['index'])
 
+print(output_data)
 # Postprocess the output data
 output_scale, output_zero_point = output_details[0]['quantization']
 output_data = (output_data - output_zero_point) * output_scale
