@@ -11,6 +11,10 @@ interpreter.allocate_tensors()
 # Get input and output tensors
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
-print(input_details)
-print(output_details)
-print(interpreter)
+
+def conv(I, K):
+    S = np.zeros(shape=(32,26,26,1))
+    for m in range(0,3):
+        for n in range(0,3):
+            S(i,j) = S(i,j) + I(i)
+
