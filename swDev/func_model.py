@@ -236,7 +236,7 @@ def inference(input_data, k_weights,conv_bias,vec, fc_weights, fc_bias, i):
 
     post_fc = fc_layer(post_reshape, fc_weights, fc_bias, vec[2],vec[3])
 
-    post_zero_fc = post_fc + 61
+    post_zero_fc = post_fc
 
     post_cast_uint8 = casttouint8(post_zero_fc)
 
