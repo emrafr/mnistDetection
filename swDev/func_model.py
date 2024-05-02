@@ -162,7 +162,7 @@ def casttouint8(matrix):
         else:
             output[i] = matrix[i].astype(dtype=np.uint8)
     return output
-
+n_frac
 
 def relu(input):
     output = np.zeros(shape=(1,26,26,32), dtype=np.int8)
@@ -297,8 +297,24 @@ def runRandomInference():
     ax[1,1].set_title('Output probabilities')
     plt.show()
 
+def runOneInference():
+    image_index = 1
+    input_data = np.expand_dims(x_test[image_index], axis=0).astype(np.uint8)
+    input_data = np.expand_dims(input_data, axis=3)  # Add a channel dimension
+    
+    result = inference(input_data, k_weights, conv_bias,vec,fc_weights,fc_bias, image_index)
+    for r in range(28):
+        for c in range(28):
+            input = Fxp(input_data[0,r,c,0], signed=False, n_word=8, n_frac=0)
+            input_bin = input.bin()
+            print(input_bin, end='')
+        print('')
+    #print(input_data[0,:,:,0])
+    #print(result.get('post_relu')[0,:,:,0])
+   
 vec = extractintM(s1,s2,s3,s4,sr,sw,si,sb, n_frac)
+print(vec[0])
 
-#runRandomInference()
-runMultipleInference(10)
-tf_inference(10)
+runOneInference()
+#runMultipleInference(10)
+#tf_inference(10)
