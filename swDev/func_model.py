@@ -20,18 +20,18 @@ output_details = interpreter.get_output_details()
 #import kernel weights and biases
 k_weights = np.load('data/kernel_weights.npy')
 conv_bias = np.load('data/conv_bias.npy')
-print("k_weights shape: ", np.shape(k_weights[:,:,:,:]))
-print("k_weights type: ",type(k_weights[0,0,0,0]))
-print("conv_bias shape: ", np.shape(conv_bias))
-print("conv_bias type: ",type(conv_bias[0]))
+# print("k_weights shape: ", np.shape(k_weights[:,:,:,:]))
+# print("k_weights type: ",type(k_weights[0,0,0,0]))
+# print("conv_bias shape: ", np.shape(conv_bias))
+# print("conv_bias type: ",type(conv_bias[0]))
 
 #import fullyconnected weights and biases
 fc_weights = np.load('data/fc_weights.npy')
 fc_bias = np.load('data/fc_bias.npy')
-print("fc_weights shape: ", np.shape(fc_weights))
-print("fc_weights type: ", type(k_weights[0,0,0,0]))
-print("fc_bias shape: ", np.shape(fc_bias))
-print("fc_bias type: ", type(conv_bias[0]))
+# print("fc_weights shape: ", np.shape(fc_weights))
+# print("fc_weights type: ", type(k_weights[0,0,0,0]))
+# print("fc_bias shape: ", np.shape(fc_bias))
+# print("fc_bias type: ", type(conv_bias[0]))
 
 s1 = 0.003921568859368563
 s2 = [0.00178410520311445, 0.006280331872403622, 0.0016178645892068744,
@@ -136,6 +136,8 @@ def conv(I, K, bias,m1,m2):
                 res[0,i,j,k] = res[0,i,j,k]
         #res[0,:,:,k] =m1[0,k]*(res[0,:,:,k] + bias[k])
         res[0,:,:,k] =m1[0,k]*2**(-n_frac)*(res[0,:,:,k] + bias[k])
+    print(res[0,:,:,0])
+    print(K[0,:,:,0])
     return res
 
 def casttoint8(matrix):
@@ -307,13 +309,13 @@ def runOneInference():
         for c in range(28):
             input = Fxp(input_data[0,r,c,0], signed=False, n_word=8, n_frac=0)
             input_bin = input.bin()
-            print(input_bin, end='')
-        print('')
+            #print(input_bin, end='')
+        #print('')
     #print(input_data[0,:,:,0])
-    #print(result.get('post_relu')[0,:,:,0])
+    print(result.get('post_relu')[0,:,:,0])
    
 vec = extractintM(s1,s2,s3,s4,sr,sw,si,sb, n_frac)
-print(vec[0])
+#print(vec[0])
 
 runOneInference()
 #runMultipleInference(10)
