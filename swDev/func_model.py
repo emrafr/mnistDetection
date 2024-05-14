@@ -3,7 +3,6 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 import random
-
 from fxpmath import Fxp
 
 # Load TFLite model and allocate tensors
@@ -20,18 +19,10 @@ output_details = interpreter.get_output_details()
 #import kernel weights and biases
 k_weights = np.load('data/kernel_weights.npy')
 conv_bias = np.load('data/conv_bias.npy')
-# print("k_weights shape: ", np.shape(k_weights[:,:,:,:]))
-# print("k_weights type: ",type(k_weights[0,0,0,0]))
-# print("conv_bias shape: ", np.shape(conv_bias))
-# print("conv_bias type: ",type(conv_bias[0]))
 
 #import fullyconnected weights and biases
 fc_weights = np.load('data/fc_weights.npy')
 fc_bias = np.load('data/fc_bias.npy')
-# print("fc_weights shape: ", np.shape(fc_weights))
-# print("fc_weights type: ", type(k_weights[0,0,0,0]))
-# print("fc_bias shape: ", np.shape(fc_bias))
-# print("fc_bias type: ", type(conv_bias[0]))
 
 s1 = 0.003921568859368563
 s2 = [0.00178410520311445, 0.006280331872403622, 0.0016178645892068744,
@@ -73,8 +64,7 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
     if iteration == total: 
         print()
 
-def tf_inference(l):
-    
+def tf_inference(l):   
     correct = 0
     wrong = 0
     for i in range(l):
@@ -122,8 +112,6 @@ def extractintM(s1,s2,s3,s4,sr,sw,si,sb, n_frac):
     m4 = np.int32(int(m4f.bin(),2))
     return [m1,m2,m3,m4]
 
-
-
 def conv(I, K, bias,m1,m2):
     res = np.zeros(shape=(1,26,26,32), dtype=np.int32)
     for k in range(0,32):
@@ -133,11 +121,7 @@ def conv(I, K, bias,m1,m2):
                     for n in range(0,3):
                         res[0,i,j,k] = res[0,i,j,k] + I[0,i+m, j+n, 0]*K[k,m,n,0]
                         #res[0,i,j,k] = res[0,i,j,k] + (I[0,i+m, j+n, 0].astype(dtype=np.int32))*K[k,m,n,0].astype(dtype=np.int32)
-                res[0,i,j,k] = res[0,i,j,k]
-        #res[0,:,:,k] =m1[0,k]*(res[0,:,:,k] + bias[k])
         res[0,:,:,k] =m1[0,k]*2**(-n_frac)*(res[0,:,:,k] + bias[k])
-    print(res[0,:,:,0])
-    print(K[0,:,:,0])
     return res
 
 def casttoint8(matrix):
@@ -164,7 +148,6 @@ def casttouint8(matrix):
         else:
             output[i] = matrix[i].astype(dtype=np.uint8)
     return output
-n_frac
 
 def relu(input):
     output = np.zeros(shape=(1,26,26,32), dtype=np.int8)
@@ -191,15 +174,12 @@ def reshape(input):
     return output
 
 def fc_layer(input,weights,bias,m3,m4):
-    #aw = calculateaw(weights)
     res = np.zeros(10, dtype=np.int32)
     res2 = np.zeros(10, dtype=np.int32)
     for k in range(10):
         for j in range(5408):
-            #res[k] = res[k] + weights[k,j]*input[j]
             res[k] = res[k] + weights[k,j].astype(dtype=np.int32)*(input[j].astype(dtype=np.int32))
         res2[k] = m3*2**(-n_frac)*((res[k]) + bias[k])
-        #res2[k] = m3*((res[k]) + bias[k])
     return res2
 
 def calculateaw(weights):
@@ -212,7 +192,6 @@ def calculateaw(weights):
 def softmax(input):
     output = np.zeros(10)
     sum = 0
-
     for i in range(10):
         sum  =  sum + np.exp(input[i])
     for i in range(10):
@@ -251,16 +230,13 @@ def inference(input_data, k_weights,conv_bias,vec, fc_weights, fc_bias, i):
 def runMultipleInference(l):
     input_dataset = np.expand_dims(x_test[:l], axis=0).astype(np.uint8)
     input_dataset  = np.expand_dims(input_dataset, axis=4)  # Add a channel dimension
-
     correct = 0
     wrong = 0
     l = l
     printProgressBar(0, l, prefix = 'Progress:', suffix = '', length = 50)
     for i in range(l):
         input_data = input_dataset[:,i,:,:,:]
-
         result = inference(input_data, k_weights, conv_bias,vec,fc_weights,fc_bias, i)
-
         if result.get('predicted') == result.get('y_true'):
             correct = correct + 1
         else:
@@ -291,7 +267,6 @@ def runRandomInference():
     ax[1,0].axis('off')
     ax[1,0].set_title('Post max pool')
 
-
     ax[1,1].bar(range(10), result.get('post_softmax').squeeze())
     ax[1,1].set_xlabel('Digit')
     ax[1,1].set_xticks([0,1,2,3,4,5,6,7,8,9])
@@ -301,8 +276,11 @@ def runRandomInference():
 
 def runOneInference():
     image_index = 1
-    input_data = np.expand_dims(x_test[image_index], axis=0).astype(np.uint8)
-    input_data = np.expand_dims(input_data, axis=3)  # Add a channel dimension
+    #input_data = np.expand_dims(x_test[image_index], axis=0).astype(np.uint8)
+    #input_data = np.expand_dims(input_data, axis=3)  # Add a channel dimension
+    input_data = np.zeros((1,28, 28,1), dtype=np.uint8)
+    input_data[:,:, 3::4,:] = np.arange(1, 197).reshape(1,28,7,1)
+    #print(matrix[0,:,:,0])
     
     result = inference(input_data, k_weights, conv_bias,vec,fc_weights,fc_bias, image_index)
     for r in range(28):
@@ -311,12 +289,11 @@ def runOneInference():
             input_bin = input.bin()
             #print(input_bin, end='')
         #print('')
-    #print(input_data[0,:,:,0])
+    print(input_data[0,:,:,0])
     print(result.get('post_relu')[0,:,:,0])
    
 vec = extractintM(s1,s2,s3,s4,sr,sw,si,sb, n_frac)
 #print(vec[0])
-
-runOneInference()
+#runOneInference()
 #runMultipleInference(10)
 #tf_inference(10)
