@@ -72,7 +72,7 @@ begin
     end if;
 end process;
 
-process(input,current_accum)
+process(input,current_accum, current_shift)
 begin
     next_accum <= (signed('0' & scale)*(w1*signed('0' & input(71 downto 64)) + w2*signed('0' & input(63 downto 56)) + w3*signed('0' & input(55 downto 48)) +
             w4*signed('0' & input(47 downto 40)) + w5*signed('0' & input(39 downto 32)) + w6*signed('0' & input(31 downto 24)) +

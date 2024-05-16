@@ -64,6 +64,7 @@ signal output_k1 : std_logic_vector(7 downto 0);
 signal next_output_reg, current_output_reg : std_logic_vector(7 downto 0);
 signal current_counter, next_counter : unsigned(4 downto 0);
 signal current_input_counter, next_input_counter : unsigned(1 downto 0);
+signal current_output_counter, next_output_counter : unsigned(1 downto 0);
 signal current_state, next_state : state_type;
 
 begin
@@ -98,6 +99,7 @@ begin
         current_output_reg <= (others => '0');
         current_counter <= (others => '0');
         current_input_counter <= (others => '0');
+        current_output_counter <= (others => '0');
         current_state <= s_idle;
     elsif rising_edge(clk) then
         current_input_r1 <= next_input_r1;
@@ -106,15 +108,17 @@ begin
         current_output_reg <= next_output_reg;
         current_counter <= next_counter;
         current_input_counter <= next_input_counter;
+        current_output_counter <= next_output_counter;
         current_state <= next_state;
     end if;
 end process;
 
-fsm : process(valid_input, current_state, current_output_reg, conv_input, current_input_r1, current_input_r2, current_input_r3)
+fsm : process(valid_input, current_state, current_output_reg, conv_input, current_input_r1, current_input_r2, current_input_r3, current_counter, current_output_counter)
 begin
 case current_state is
     when s_idle =>
         next_counter <= current_counter;
+        next_output_counter <= current_output_counter; 
         valid_output <= '0';
         if valid_input = '1' then
             next_input_r3 <= conv_input;
@@ -127,8 +131,7 @@ case current_state is
             else
                 next_input_counter <= current_input_counter;
                 next_state <= s_2;
-                ready <= '0';
-
+                ready <= '1';
             end if;
         else
             next_input_r1 <= current_input_r1;
@@ -140,28 +143,39 @@ case current_state is
         end if;
     when s_2 =>
         next_input_counter <= current_input_counter;
-        -- calculate
+        if current_output_counter < 3 then
+            next_output_counter <= current_output_counter + 1;
+            valid_output <= '0';
+        else
+            next_output_counter <= current_output_counter;
+            valid_output <= '1';
+        end if;
         input_kernel <= unsigned(current_input_r1(223 downto 200) & current_input_r2(223 downto 200) & current_input_r3(223 downto 200));
         next_output_reg <= output_k1;
-        conv_output <= current_output_reg;
-        valid_output <= '1';
-        if current_counter = 25 then   
-            next_input_r1 <= current_input_r1(199 downto 0) & current_input_r1(223 downto 200);
-            next_input_r2 <= current_input_r2(199 downto 0) & current_input_r2(223 downto 200);
-            next_input_r3 <= current_input_r3(199 downto 0) & current_input_r3(223 downto 200);         
-            next_counter <= (others => '0');
+        
+        if current_counter = 28 then   
+--            next_input_r1 <= current_input_r1(199 downto 0) & current_input_r1(223 downto 200);
+--            next_input_r2 <= current_input_r2(199 downto 0) & current_input_r2(223 downto 200);
+--            next_input_r3 <= current_input_r3(199 downto 0) & current_input_r3(223 downto 200);         
             
+            next_input_r1 <= current_input_r1;
+            next_input_r2 <= current_input_r2;
+            next_input_r3 <= current_input_r3;         
+            next_counter <= (others => '0');
+            next_output_counter <= (others => '0');
             next_state <= s_idle;
-            ready <= '1';
+            ready <= '0';
         else
+            next_counter <= current_counter + 1;
             next_input_r1 <= current_input_r1(215 downto 0) & current_input_r1(223 downto 216);
             next_input_r2 <= current_input_r2(215 downto 0) & current_input_r2(223 downto 216);
             next_input_r3 <= current_input_r3(215 downto 0) & current_input_r3(223 downto 216);
-            next_counter <= current_counter + 1;
             next_state <= s_2;
             ready <= '0';
         end if;
 end case;
 end process;
+conv_output <= output_k1;
+--conv_output <= current_output_reg;
 
 end Behavioral;

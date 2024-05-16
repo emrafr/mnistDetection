@@ -4,12 +4,6 @@ use ieee.numeric_std.all;
 
 entity conv_v2_0 is
 	generic (
-		-- Users to add parameters here
-
-		-- User parameters ends
-		-- Do not modify the parameters beyond this line
-
-
 		-- Parameters of Axi Slave Bus Interface S00_AXIS
 		C_S00_AXIS_TDATA_WIDTH	: integer	:= 32;
 

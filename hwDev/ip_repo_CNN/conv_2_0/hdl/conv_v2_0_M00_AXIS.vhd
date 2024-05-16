@@ -4,24 +4,14 @@ use ieee.numeric_std.all;
 
 entity conv_v2_0_M00_AXIS is
 	generic (
-		-- Users to add parameters here
-
-		-- User parameters ends
-		-- Do not modify the parameters beyond this line
-
-		-- Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.
 		C_M_AXIS_TDATA_WIDTH	: integer	:= 32
-		-- Start count is the number of clock cycles the master will wait before initiating/issuing any transaction.
-		--C_M_START_COUNT	: integer	:= 52
+
 	); 
 	port (
 		-- Users to add ports here
         valid_output : in std_logic;
         conv_output : in std_logic_vector(7 downto 0);
 		-- User ports ends
-		-- Do not modify the ports beyond this line
-
-		-- Global ports
 		M_AXIS_ACLK	: in std_logic;
 		-- 
 		M_AXIS_ARESETN	: in std_logic;
@@ -40,13 +30,14 @@ end conv_v2_0_M00_AXIS;
 
 architecture implementation of conv_v2_0_M00_AXIS is
                     
-	type state_type is ( IDLE,        -- This is the initial/idle state                    
-	                SEND_STREAM);  -- In this state the                               
+	--type state_type is ( IDLE,        -- This is the initial/idle state                    
+	                --SEND_STREAM);  -- In this state the                               
 	                             -- stream data is output through M_AXIS_TDATA        
 	-- State variable                                                                 
-	signal  current_state, next_state : state_type;         
+	--signal  current_state, next_state : state_type;         
 	signal  current_output_reg, next_output_reg : std_logic_vector(31 downto 0);
 	signal current_counter, next_counter : unsigned(2 downto 0);                                        
+	signal current_output_counter, next_output_counter : unsigned(2 downto 0);                                        
 
 
 begin
@@ -63,44 +54,106 @@ begin
 	  if (rising_edge (M_AXIS_ACLK)) then                                                       
 	    if(M_AXIS_ARESETN = '0') then                                                           
 	      -- Synchronous reset (active low)                                                     
-	      current_state      <= IDLE; 
+	      --current_state      <= IDLE; 
 	      current_output_reg <= (others => '0');
 	      current_counter <= ( others => '0');                                                         
+	      current_output_counter <= ( others => '0');                                                         
 	    else 
-	       current_state <= next_state;
-	       current_counter <= next_counter;
+	      -- current_state <= next_state;
 	       current_output_reg <= next_output_reg;                                                                                                                                                                
+	       current_counter <= next_counter;
+	       current_output_counter <= next_output_counter;
 	    end if;                                                                                 
 	  end if;                                                                                   
 	end process;    
 	
-	process(current_counter, current_output_reg, conv_output, valid_output)
+
+	process(current_counter, current_output_reg, conv_output, valid_output, current_output_counter)
 	begin
-	case current_state is
-	when IDLE =>
-	   M_AXIS_TVALID	<= '0';
-	   if current_counter > 3 then
-	       next_counter <= (others => '0');
-	       next_state <= SEND_STREAM;
+	   if valid_output = '1' then
+	       next_output_reg <= current_output_reg(23 downto 0) & conv_output;
+           if current_counter > 3 and valid_output = '1' then
+               M_AXIS_TVALID <= '1';
+               if current_output_counter >  6 then
+                   next_counter <= (others => '0');
+                   next_output_counter <= (others => '0');
+               else
+                   next_counter <= "001";
+                   next_output_counter <= current_output_counter + 1;
+               end if;
+           else	           
+               M_AXIS_TVALID <= '0'; 
+               next_counter <= current_counter + 1;
+               next_output_counter <= current_output_counter;
+           end if;       
 	   else
-	       next_state <= IDLE;
-	       if valid_output = '1' then       
-	           next_output_reg <= current_output_reg(23 downto 0) & conv_output;
-	           next_counter <= current_counter + 1;
-	       else
-	           next_output_reg <= current_output_reg;
-	           next_counter <= current_counter;
-	       end if;
-	   end if;           
-	when SEND_STREAM =>
-	   next_output_reg <= current_output_reg;
-	   next_counter <= current_counter;
-	   M_AXIS_TVALID	<= '1';
-	   if M_AXIS_TREADY = '0' then
-	       next_state <= SEND_STREAM;
-	   else
-	       next_state <= IDLE;
+	       if current_output_counter < 7 and current_output_counter > 0 then
+               if current_counter < 4 and current_counter > 0 then
+                   M_AXIS_TVALID <= '0';
+                   next_output_reg <= current_output_reg(23 downto 0) & "00000000";
+                   next_counter <= current_counter + 1;
+                   next_output_counter <= current_output_counter; 
+               elsif current_counter > 3 then
+                   next_output_reg <= current_output_reg;
+                   M_AXIS_TVALID <= '1';
+                   next_output_counter <= current_output_counter + 1;
+                   next_counter <= (others => '0');
+               else
+                   M_AXIS_TVALID <= '0';
+                   next_output_reg <= current_output_reg;
+                   next_output_counter <= current_output_counter;
+                   next_counter <= current_counter;
+               end if;
+	       	else
+               M_AXIS_TVALID <= '0';
+               next_output_reg <= current_output_reg;
+               next_output_counter <= (others => '0');
+               next_counter <= current_counter;
+	       	end if;  	               
 	   end if;
-	end case;
+	   
+	   
+	   
+	   
+--	   if current_counter > 3 and valid_output = '1' then
+--	       M_AXIS_TVALID <= '1';
+--	       if current_output_counter >  6 then
+--	           next_counter <= (others => '0');
+--	           next_output_counter <= (others => '0');
+--	       else
+--	           next_counter <= "001";
+--	           next_output_counter <= current_output_counter + 1;
+--	       end if;
+--	   else	           
+--	   	   M_AXIS_TVALID <= '0'; 
+--	       next_counter <= current_counter + 1;
+--	       next_output_counter <= current_output_counter;
+--	   end if;
+
+--	   if current_counter > 3 then
+--	       M_AXIS_TVALID <= '1';
+--	       if valid_output = '1' then       
+--	           next_output_reg <= current_output_reg(23 downto 0) & conv_output;
+--	           next_counter <= "001";
+--	       else
+--               next_output_reg <= current_output_reg;
+--               next_counter <= (others => '0');
+--	       end if;
+--	   else
+--	   	   M_AXIS_TVALID <= '0';
+--	       if valid_output = '1' then       
+--	           next_output_reg <= current_output_reg(23 downto 0) & conv_output;
+--	           next_counter <= current_counter + 1;
+--	       else
+--	           if current_counter < 4 then
+--	               next_output_reg <= current_output_reg(23 downto 0) & "00000000";
+--	               next_counter <= current_counter + 1;
+--	           else
+--                   next_output_reg <= current_output_reg;
+--                   next_counter <= current_counter;
+--               end if;
+--	       end if;
+--	   end if;
+	       
 	end process;                                                                            
 end implementation;

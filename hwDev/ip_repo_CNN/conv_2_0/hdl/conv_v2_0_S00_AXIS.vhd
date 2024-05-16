@@ -197,23 +197,25 @@ begin
 case current_state is
 when s_init =>
     output_valid <= '0';
-    next_row_reg <= current_row_reg;
     if writes_done = '1' then
         next_state <= s_send_data;
+        next_row_reg <= stream_data_fifo(0) & stream_data_fifo(1) & stream_data_fifo(2) & stream_data_fifo(3) & stream_data_fifo(4) & stream_data_fifo(5) & stream_data_fifo(6);
     else
         next_state <= s_init;
+        next_row_reg <= current_row_reg;
+
     end if;
 when s_send_data =>
     output_valid <= '1';
-    
+    next_row_reg <= current_row_reg;
+
     if ready_conv = '1' then
         next_state <= s_init;
 
-        next_row_reg <= stream_data_fifo(0) & stream_data_fifo(1) & stream_data_fifo(2) & stream_data_fifo(3) & stream_data_fifo(4) & stream_data_fifo(5) & stream_data_fifo(6);
+        --next_row_reg <= stream_data_fifo(0) & stream_data_fifo(1) & stream_data_fifo(2) & stream_data_fifo(3) & stream_data_fifo(4) & stream_data_fifo(5) & stream_data_fifo(6);
         --next_row_reg <= (others => '1');
         --next_state <= s_init;
     else
-        next_row_reg <= current_row_reg;
         next_state <= s_send_data;
     end if;
 end case;
