@@ -9,9 +9,7 @@ def write_kernel_code(filename):
         for i in range(32):
             kern = k_weights[i,:,:,0].reshape(1,9)
             file.write(f'kernel_{i+1} : kernel_multiplier\ngeneric map(\n')
-            for j in range(9):
-                file.write(f'\tw{j+1} => TO_SIGNED({kern[0,j]}, 8),\n')
-            file.write(f'\tscale => TO_UNSIGNED({round(m1[0,i])}, 32),\n')
+            file.write(f'\tFILE_NAME => "conv_weights{i+1}.txt",\n')
             file.write(f'\tbias => TO_SIGNED({conv_bias[i]}, 32)\n')
             file.write(f')\nport map(\n')
             file.write(f'\tclk => clk,\n')
@@ -20,6 +18,16 @@ def write_kernel_code(filename):
             file.write(f'\toutput => output_k{i+1}\n')
             file.write(f');\n\n')
 
+def write_kernel_weights(filename):
+    k_weights = np.load('data/kernel_weights.npy')
+    for j in range(32):
+        filename2 = filename + f'{j+1}.txt'
+        with open(filename2, 'w') as file:
+            kern = k_weights[j,:,:,0].reshape(1,9)
+            for i in range(9):
+                file.write( np.binary_repr(kern[0,i], width=8) + f'\n')
+        filename2 =''
+    
 def write_mp_code(filename):
     with open(filename, 'w') as file:
         for i in range(32):
@@ -35,4 +43,4 @@ def write_mp_code(filename):
             file.write(f');\n\n')
 
 if __name__ == "__main__":
-    write_kernel_code("gen_code/kernel_code.txt")
+    write_kernel_weights("gen_code/conv_weights")
