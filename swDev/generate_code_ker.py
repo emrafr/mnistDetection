@@ -27,6 +27,14 @@ def write_kernel_weights(filename):
             for i in range(9):
                 file.write( np.binary_repr(kern[0,i], width=8) + f'\n')
         filename2 =''
+
+    with open('all_kernel_weights.txt', 'w') as file:
+        for k in range(32):
+            file.write( f'kernel{k+1} :  ')
+            for r in range(3):
+                for c in range(3):
+                    file.write(str(k_weights[k,r,c,0]) + f'\t:')
+            file.write(f'\n\n')
     
 def write_mp_code(filename):
     with open(filename, 'w') as file:

@@ -77,12 +77,14 @@ begin
 	       current_output_reg <= next_output_reg;                                                                                                                                                                
 	       current_save_reg <= next_save_reg;
 	       if incr_rp = '1' then
+	           current_output_reg <= stream_data_fifo(read_pointer);
 	           read_pointer <= read_pointer + 1;
+	       else
+	           current_output_reg <= next_output_reg;
 	       end if;
 	       if incr_wp = '1' then
-	           write_pointer <= write_pointer + 1;
---	       else
---	           write_pointer <= 0;
+	           stream_data_fifo(write_pointer) <= next_save_reg;
+	           write_pointer <= write_pointer + 1;               
 	       end if;                                                                                                                                                                
 	    end if;                                                                                 
 	  end if;                                                                                   
@@ -110,11 +112,11 @@ begin
 --       next_save_reg <= current_save_reg;
        if valid_output = '1' then       
            next_output_reg <= mp_output;
-           next_save_reg <= mp_output;
+           next_save_reg <= current_save_reg;
            next_state <= SEND_STREAM;
-           stream_data_fifo(write_pointer) <= mp_output;
-           incr_wp <= '1' ;
-           incr_rp <= '1';
+           --stream_data_fifo(write_pointer) <= mp_output;
+           incr_wp <= '0' ;
+           incr_rp <= '0';
        else
            next_output_reg <= current_output_reg;
            next_save_reg <= current_save_reg;
@@ -131,8 +133,9 @@ begin
            next_counter <=  (others => '0');
            next_counter2 <= (others => '0');
            next_output_reg <= current_output_reg;
---           next_save_reg <= current_save_reg;
+           next_save_reg <= current_save_reg;
            incr_rp <= '0';
+           incr_wp <= '0' ;
        else
            next_state <= SEND_STREAM; 
            if M_AXIS_TREADY = '1' then
@@ -140,7 +143,8 @@ begin
 
                if current_counter2 > 6 then
 --                    next_output_reg <= current_save_reg(1023 downto 768);
-                    next_output_reg <= stream_data_fifo(read_pointer);
+                   -- next_output_reg <= stream_data_fifo(read_pointer);
+                    next_output_reg <= current_output_reg;
                     incr_rp <= '1';
                     next_counter2 <= (others => '0');
                else 
@@ -157,7 +161,7 @@ begin
            
            if valid_output = '1' then
                 next_save_reg <= mp_output;
-                stream_data_fifo(write_pointer) <= mp_output;
+                --stream_data_fifo(write_pointer) <= mp_output;
                 incr_wp <= '1' ;
            else
                 next_save_reg <= current_save_reg;

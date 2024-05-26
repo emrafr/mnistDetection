@@ -25,16 +25,7 @@ end conv;
 architecture Behavioral of conv is
 component kernel_multiplier is
     generic(
-        w1 : signed(7 downto 0);
-        w2 : signed(7 downto 0);
-        w3 : signed(7 downto 0);
-        w4 : signed(7 downto 0);
-        w5 : signed(7 downto 0);
-        w6 : signed(7 downto 0);
-        w7 : signed(7 downto 0);
-        w8 : signed(7 downto 0);
-        w9 : signed(7 downto 0);
-        scale : unsigned(31 downto 0);
+        FILE_NAME: string := "weights.txt";
         bias : signed(31 downto 0)
     );
     port(
@@ -54,23 +45,13 @@ signal output_k25, output_k26, output_k27, output_k28, output_k29, output_k30, o
 signal next_output_reg, current_output_reg : std_logic_vector(7 downto 0);
 signal current_counter, next_counter : unsigned(4 downto 0);
 signal current_input_counter, next_input_counter : unsigned(1 downto 0);
-signal current_output_counter, next_output_counter : unsigned(1 downto 0);
+signal current_output_counter, next_output_counter : unsigned(2 downto 0);
 signal current_state, next_state : state_type;
 
 begin
-
 kernel_1 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(85, 8),
-	w2 => TO_SIGNED(107, 8),
-	w3 => TO_SIGNED(-34, 8),
-	w4 => TO_SIGNED(-33, 8),
-	w5 => TO_SIGNED(-16, 8),
-	w6 => TO_SIGNED(-1, 8),
-	w7 => TO_SIGNED(-54, 8),
-	w8 => TO_SIGNED(-32, 8),
-	w9 => TO_SIGNED(127, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights1.txt",
 	bias => TO_SIGNED(-26468, 32)
 )
 port map(
@@ -82,16 +63,7 @@ port map(
 
 kernel_2 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(54, 8),
-	w2 => TO_SIGNED(7, 8),
-	w3 => TO_SIGNED(-106, 8),
-	w4 => TO_SIGNED(87, 8),
-	w5 => TO_SIGNED(25, 8),
-	w6 => TO_SIGNED(-127, 8),
-	w7 => TO_SIGNED(83, 8),
-	w8 => TO_SIGNED(23, 8),
-	w9 => TO_SIGNED(-65, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights2.txt",
 	bias => TO_SIGNED(-1964, 32)
 )
 port map(
@@ -103,16 +75,7 @@ port map(
 
 kernel_3 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(102, 8),
-	w2 => TO_SIGNED(89, 8),
-	w3 => TO_SIGNED(2, 8),
-	w4 => TO_SIGNED(-127, 8),
-	w5 => TO_SIGNED(-8, 8),
-	w6 => TO_SIGNED(-79, 8),
-	w7 => TO_SIGNED(44, 8),
-	w8 => TO_SIGNED(22, 8),
-	w9 => TO_SIGNED(110, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights3.txt",
 	bias => TO_SIGNED(-26026, 32)
 )
 port map(
@@ -124,16 +87,7 @@ port map(
 
 kernel_4 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(-127, 8),
-	w2 => TO_SIGNED(-54, 8),
-	w3 => TO_SIGNED(-32, 8),
-	w4 => TO_SIGNED(-7, 8),
-	w5 => TO_SIGNED(-17, 8),
-	w6 => TO_SIGNED(51, 8),
-	w7 => TO_SIGNED(22, 8),
-	w8 => TO_SIGNED(48, 8),
-	w9 => TO_SIGNED(13, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights4.txt",
 	bias => TO_SIGNED(-14098, 32)
 )
 port map(
@@ -145,16 +99,7 @@ port map(
 
 kernel_5 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(20, 8),
-	w2 => TO_SIGNED(33, 8),
-	w3 => TO_SIGNED(61, 8),
-	w4 => TO_SIGNED(44, 8),
-	w5 => TO_SIGNED(90, 8),
-	w6 => TO_SIGNED(49, 8),
-	w7 => TO_SIGNED(-111, 8),
-	w8 => TO_SIGNED(-124, 8),
-	w9 => TO_SIGNED(-127, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights5.txt",
 	bias => TO_SIGNED(-1830, 32)
 )
 port map(
@@ -166,16 +111,7 @@ port map(
 
 kernel_6 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(92, 8),
-	w2 => TO_SIGNED(19, 8),
-	w3 => TO_SIGNED(-127, 8),
-	w4 => TO_SIGNED(11, 8),
-	w5 => TO_SIGNED(107, 8),
-	w6 => TO_SIGNED(40, 8),
-	w7 => TO_SIGNED(-117, 8),
-	w8 => TO_SIGNED(-31, 8),
-	w9 => TO_SIGNED(107, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights6.txt",
 	bias => TO_SIGNED(-22515, 32)
 )
 port map(
@@ -187,16 +123,7 @@ port map(
 
 kernel_7 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(50, 8),
-	w2 => TO_SIGNED(67, 8),
-	w3 => TO_SIGNED(15, 8),
-	w4 => TO_SIGNED(33, 8),
-	w5 => TO_SIGNED(38, 8),
-	w6 => TO_SIGNED(-63, 8),
-	w7 => TO_SIGNED(-93, 8),
-	w8 => TO_SIGNED(-103, 8),
-	w9 => TO_SIGNED(-127, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights7.txt",
 	bias => TO_SIGNED(-289, 32)
 )
 port map(
@@ -208,16 +135,7 @@ port map(
 
 kernel_8 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(-127, 8),
-	w2 => TO_SIGNED(-16, 8),
-	w3 => TO_SIGNED(73, 8),
-	w4 => TO_SIGNED(-24, 8),
-	w5 => TO_SIGNED(44, 8),
-	w6 => TO_SIGNED(31, 8),
-	w7 => TO_SIGNED(102, 8),
-	w8 => TO_SIGNED(-6, 8),
-	w9 => TO_SIGNED(-57, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights8.txt",
 	bias => TO_SIGNED(-26262, 32)
 )
 port map(
@@ -229,16 +147,7 @@ port map(
 
 kernel_9 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(-127, 8),
-	w2 => TO_SIGNED(-53, 8),
-	w3 => TO_SIGNED(38, 8),
-	w4 => TO_SIGNED(-77, 8),
-	w5 => TO_SIGNED(-29, 8),
-	w6 => TO_SIGNED(79, 8),
-	w7 => TO_SIGNED(-70, 8),
-	w8 => TO_SIGNED(-18, 8),
-	w9 => TO_SIGNED(70, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights9.txt",
 	bias => TO_SIGNED(-412, 32)
 )
 port map(
@@ -250,16 +159,7 @@ port map(
 
 kernel_10 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(-104, 8),
-	w2 => TO_SIGNED(-60, 8),
-	w3 => TO_SIGNED(-11, 8),
-	w4 => TO_SIGNED(127, 8),
-	w5 => TO_SIGNED(93, 8),
-	w6 => TO_SIGNED(-12, 8),
-	w7 => TO_SIGNED(-125, 8),
-	w8 => TO_SIGNED(-10, 8),
-	w9 => TO_SIGNED(-26, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights10.txt",
 	bias => TO_SIGNED(-1208, 32)
 )
 port map(
@@ -271,16 +171,7 @@ port map(
 
 kernel_11 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(32, 8),
-	w2 => TO_SIGNED(101, 8),
-	w3 => TO_SIGNED(82, 8),
-	w4 => TO_SIGNED(-26, 8),
-	w5 => TO_SIGNED(4, 8),
-	w6 => TO_SIGNED(1, 8),
-	w7 => TO_SIGNED(-115, 8),
-	w8 => TO_SIGNED(-127, 8),
-	w9 => TO_SIGNED(-67, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights11.txt",
 	bias => TO_SIGNED(-1550, 32)
 )
 port map(
@@ -292,16 +183,7 @@ port map(
 
 kernel_12 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(-120, 8),
-	w2 => TO_SIGNED(-55, 8),
-	w3 => TO_SIGNED(80, 8),
-	w4 => TO_SIGNED(-127, 8),
-	w5 => TO_SIGNED(25, 8),
-	w6 => TO_SIGNED(93, 8),
-	w7 => TO_SIGNED(-82, 8),
-	w8 => TO_SIGNED(30, 8),
-	w9 => TO_SIGNED(64, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights12.txt",
 	bias => TO_SIGNED(-1468, 32)
 )
 port map(
@@ -313,16 +195,7 @@ port map(
 
 kernel_13 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(-117, 8),
-	w2 => TO_SIGNED(-20, 8),
-	w3 => TO_SIGNED(59, 8),
-	w4 => TO_SIGNED(34, 8),
-	w5 => TO_SIGNED(-127, 8),
-	w6 => TO_SIGNED(-70, 8),
-	w7 => TO_SIGNED(40, 8),
-	w8 => TO_SIGNED(58, 8),
-	w9 => TO_SIGNED(-63, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights13.txt",
 	bias => TO_SIGNED(4732, 32)
 )
 port map(
@@ -334,16 +207,7 @@ port map(
 
 kernel_14 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(-5, 8),
-	w2 => TO_SIGNED(3, 8),
-	w3 => TO_SIGNED(-9, 8),
-	w4 => TO_SIGNED(127, 8),
-	w5 => TO_SIGNED(79, 8),
-	w6 => TO_SIGNED(-36, 8),
-	w7 => TO_SIGNED(-117, 8),
-	w8 => TO_SIGNED(-56, 8),
-	w9 => TO_SIGNED(96, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights14.txt",
 	bias => TO_SIGNED(-16986, 32)
 )
 port map(
@@ -355,16 +219,7 @@ port map(
 
 kernel_15 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(22, 8),
-	w2 => TO_SIGNED(127, 8),
-	w3 => TO_SIGNED(-16, 8),
-	w4 => TO_SIGNED(92, 8),
-	w5 => TO_SIGNED(-101, 8),
-	w6 => TO_SIGNED(48, 8),
-	w7 => TO_SIGNED(-30, 8),
-	w8 => TO_SIGNED(84, 8),
-	w9 => TO_SIGNED(107, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights15.txt",
 	bias => TO_SIGNED(-50311, 32)
 )
 port map(
@@ -376,16 +231,7 @@ port map(
 
 kernel_16 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(-26, 8),
-	w2 => TO_SIGNED(57, 8),
-	w3 => TO_SIGNED(88, 8),
-	w4 => TO_SIGNED(-108, 8),
-	w5 => TO_SIGNED(2, 8),
-	w6 => TO_SIGNED(65, 8),
-	w7 => TO_SIGNED(-127, 8),
-	w8 => TO_SIGNED(-90, 8),
-	w9 => TO_SIGNED(-46, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights16.txt",
 	bias => TO_SIGNED(-25, 32)
 )
 port map(
@@ -397,16 +243,7 @@ port map(
 
 kernel_17 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(22, 8),
-	w2 => TO_SIGNED(72, 8),
-	w3 => TO_SIGNED(-37, 8),
-	w4 => TO_SIGNED(-75, 8),
-	w5 => TO_SIGNED(67, 8),
-	w6 => TO_SIGNED(-37, 8),
-	w7 => TO_SIGNED(-65, 8),
-	w8 => TO_SIGNED(127, 8),
-	w9 => TO_SIGNED(-25, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights17.txt",
 	bias => TO_SIGNED(-16080, 32)
 )
 port map(
@@ -418,16 +255,7 @@ port map(
 
 kernel_18 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(64, 8),
-	w2 => TO_SIGNED(52, 8),
-	w3 => TO_SIGNED(-80, 8),
-	w4 => TO_SIGNED(83, 8),
-	w5 => TO_SIGNED(-17, 8),
-	w6 => TO_SIGNED(-127, 8),
-	w7 => TO_SIGNED(36, 8),
-	w8 => TO_SIGNED(-95, 8),
-	w9 => TO_SIGNED(-87, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights18.txt",
 	bias => TO_SIGNED(-2319, 32)
 )
 port map(
@@ -439,16 +267,7 @@ port map(
 
 kernel_19 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(-127, 8),
-	w2 => TO_SIGNED(-126, 8),
-	w3 => TO_SIGNED(-105, 8),
-	w4 => TO_SIGNED(32, 8),
-	w5 => TO_SIGNED(31, 8),
-	w6 => TO_SIGNED(-48, 8),
-	w7 => TO_SIGNED(65, 8),
-	w8 => TO_SIGNED(78, 8),
-	w9 => TO_SIGNED(19, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights19.txt",
 	bias => TO_SIGNED(-468, 32)
 )
 port map(
@@ -460,16 +279,7 @@ port map(
 
 kernel_20 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(93, 8),
-	w2 => TO_SIGNED(-50, 8),
-	w3 => TO_SIGNED(-97, 8),
-	w4 => TO_SIGNED(-127, 8),
-	w5 => TO_SIGNED(-91, 8),
-	w6 => TO_SIGNED(27, 8),
-	w7 => TO_SIGNED(-19, 8),
-	w8 => TO_SIGNED(85, 8),
-	w9 => TO_SIGNED(68, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights20.txt",
 	bias => TO_SIGNED(39, 32)
 )
 port map(
@@ -481,16 +291,7 @@ port map(
 
 kernel_21 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(-25, 8),
-	w2 => TO_SIGNED(-89, 8),
-	w3 => TO_SIGNED(-127, 8),
-	w4 => TO_SIGNED(85, 8),
-	w5 => TO_SIGNED(40, 8),
-	w6 => TO_SIGNED(-90, 8),
-	w7 => TO_SIGNED(63, 8),
-	w8 => TO_SIGNED(77, 8),
-	w9 => TO_SIGNED(2, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights21.txt",
 	bias => TO_SIGNED(-634, 32)
 )
 port map(
@@ -502,16 +303,7 @@ port map(
 
 kernel_22 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(-127, 8),
-	w2 => TO_SIGNED(-17, 8),
-	w3 => TO_SIGNED(21, 8),
-	w4 => TO_SIGNED(-101, 8),
-	w5 => TO_SIGNED(-62, 8),
-	w6 => TO_SIGNED(93, 8),
-	w7 => TO_SIGNED(-2, 8),
-	w8 => TO_SIGNED(-43, 8),
-	w9 => TO_SIGNED(16, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights22.txt",
 	bias => TO_SIGNED(-4317, 32)
 )
 port map(
@@ -523,16 +315,7 @@ port map(
 
 kernel_23 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(73, 8),
-	w2 => TO_SIGNED(106, 8),
-	w3 => TO_SIGNED(-108, 8),
-	w4 => TO_SIGNED(-75, 8),
-	w5 => TO_SIGNED(66, 8),
-	w6 => TO_SIGNED(-14, 8),
-	w7 => TO_SIGNED(-127, 8),
-	w8 => TO_SIGNED(51, 8),
-	w9 => TO_SIGNED(84, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights23.txt",
 	bias => TO_SIGNED(-15749, 32)
 )
 port map(
@@ -544,16 +327,7 @@ port map(
 
 kernel_24 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(58, 8),
-	w2 => TO_SIGNED(79, 8),
-	w3 => TO_SIGNED(66, 8),
-	w4 => TO_SIGNED(-47, 8),
-	w5 => TO_SIGNED(14, 8),
-	w6 => TO_SIGNED(95, 8),
-	w7 => TO_SIGNED(-109, 8),
-	w8 => TO_SIGNED(-127, 8),
-	w9 => TO_SIGNED(-12, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights24.txt",
 	bias => TO_SIGNED(-8896, 32)
 )
 port map(
@@ -565,16 +339,7 @@ port map(
 
 kernel_25 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(-64, 8),
-	w2 => TO_SIGNED(112, 8),
-	w3 => TO_SIGNED(-31, 8),
-	w4 => TO_SIGNED(-60, 8),
-	w5 => TO_SIGNED(127, 8),
-	w6 => TO_SIGNED(-116, 8),
-	w7 => TO_SIGNED(28, 8),
-	w8 => TO_SIGNED(94, 8),
-	w9 => TO_SIGNED(-81, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights25.txt",
 	bias => TO_SIGNED(-14009, 32)
 )
 port map(
@@ -586,16 +351,7 @@ port map(
 
 kernel_26 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(124, 8),
-	w2 => TO_SIGNED(90, 8),
-	w3 => TO_SIGNED(-127, 8),
-	w4 => TO_SIGNED(-62, 8),
-	w5 => TO_SIGNED(-73, 8),
-	w6 => TO_SIGNED(86, 8),
-	w7 => TO_SIGNED(-42, 8),
-	w8 => TO_SIGNED(81, 8),
-	w9 => TO_SIGNED(64, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights26.txt",
 	bias => TO_SIGNED(-21225, 32)
 )
 port map(
@@ -607,16 +363,7 @@ port map(
 
 kernel_27 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(-123, 8),
-	w2 => TO_SIGNED(-107, 8),
-	w3 => TO_SIGNED(-14, 8),
-	w4 => TO_SIGNED(-16, 8),
-	w5 => TO_SIGNED(-10, 8),
-	w6 => TO_SIGNED(40, 8),
-	w7 => TO_SIGNED(127, 8),
-	w8 => TO_SIGNED(112, 8),
-	w9 => TO_SIGNED(-50, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights27.txt",
 	bias => TO_SIGNED(-551, 32)
 )
 port map(
@@ -628,16 +375,7 @@ port map(
 
 kernel_28 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(-31, 8),
-	w2 => TO_SIGNED(60, 8),
-	w3 => TO_SIGNED(-73, 8),
-	w4 => TO_SIGNED(-75, 8),
-	w5 => TO_SIGNED(-127, 8),
-	w6 => TO_SIGNED(-68, 8),
-	w7 => TO_SIGNED(-19, 8),
-	w8 => TO_SIGNED(50, 8),
-	w9 => TO_SIGNED(-62, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights28.txt",
 	bias => TO_SIGNED(9757, 32)
 )
 port map(
@@ -649,16 +387,7 @@ port map(
 
 kernel_29 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(-5, 8),
-	w2 => TO_SIGNED(-17, 8),
-	w3 => TO_SIGNED(-113, 8),
-	w4 => TO_SIGNED(127, 8),
-	w5 => TO_SIGNED(97, 8),
-	w6 => TO_SIGNED(103, 8),
-	w7 => TO_SIGNED(-14, 8),
-	w8 => TO_SIGNED(-57, 8),
-	w9 => TO_SIGNED(88, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights29.txt",
 	bias => TO_SIGNED(-49214, 32)
 )
 port map(
@@ -670,16 +399,7 @@ port map(
 
 kernel_30 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(60, 8),
-	w2 => TO_SIGNED(47, 8),
-	w3 => TO_SIGNED(-18, 8),
-	w4 => TO_SIGNED(-127, 8),
-	w5 => TO_SIGNED(-61, 8),
-	w6 => TO_SIGNED(68, 8),
-	w7 => TO_SIGNED(-7, 8),
-	w8 => TO_SIGNED(45, 8),
-	w9 => TO_SIGNED(39, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights30.txt",
 	bias => TO_SIGNED(-18987, 32)
 )
 port map(
@@ -691,16 +411,7 @@ port map(
 
 kernel_31 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(25, 8),
-	w2 => TO_SIGNED(-37, 8),
-	w3 => TO_SIGNED(73, 8),
-	w4 => TO_SIGNED(-127, 8),
-	w5 => TO_SIGNED(46, 8),
-	w6 => TO_SIGNED(0, 8),
-	w7 => TO_SIGNED(55, 8),
-	w8 => TO_SIGNED(58, 8),
-	w9 => TO_SIGNED(-60, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights31.txt",
 	bias => TO_SIGNED(-16486, 32)
 )
 port map(
@@ -712,16 +423,7 @@ port map(
 
 kernel_32 : kernel_multiplier
 generic map(
-	w1 => TO_SIGNED(11, 8),
-	w2 => TO_SIGNED(44, 8),
-	w3 => TO_SIGNED(26, 8),
-	w4 => TO_SIGNED(-11, 8),
-	w5 => TO_SIGNED(33, 8),
-	w6 => TO_SIGNED(73, 8),
-	w7 => TO_SIGNED(-127, 8),
-	w8 => TO_SIGNED(-86, 8),
-	w9 => TO_SIGNED(-107, 8),
-	scale => TO_UNSIGNED(11965621, 32),
+	FILE_NAME => "/home/emma/mnistDetection/swDev/gen_code/conv_weights32.txt",
 	bias => TO_SIGNED(-3402, 32)
 )
 port map(
@@ -776,7 +478,7 @@ case current_state is
             end if;
         else
             next_input_r1 <= current_input_r1;
-            next_input_r2 <= current_input_r2;
+            next_input_r2 <= current_input_r2; 
             next_input_r3 <= current_input_r3;
             next_input_counter <= current_input_counter;
             next_state <= s_idle;
@@ -784,24 +486,24 @@ case current_state is
         end if;
     when s_2 =>
         next_input_counter <= current_input_counter;
-        if current_output_counter < 3 then
+        if current_output_counter < 6 then
             next_output_counter <= current_output_counter + 1;
             valid_output <= '0';
         else
             next_output_counter <= current_output_counter;
             valid_output <= '1';
         end if;
-        input_kernel <= unsigned(current_input_r1(223 downto 200) & current_input_r2(223 downto 200) & current_input_r3(223 downto 200));
+        --input_kernel <= unsigned(current_input_r1(223 downto 200) & current_input_r2(223 downto 200) & current_input_r3(223 downto 200));
         next_output_reg <= output_k1;
         
-        if current_counter = 28 then   
---            next_input_r1 <= current_input_r1(199 downto 0) & current_input_r1(223 downto 200);
---            next_input_r2 <= current_input_r2(199 downto 0) & current_input_r2(223 downto 200);
---            next_input_r3 <= current_input_r3(199 downto 0) & current_input_r3(223 downto 200);         
+        if current_counter = 31 then   
+            next_input_r1 <= current_input_r1(23 downto 0) & current_input_r1(223 downto 24);
+            next_input_r2 <= current_input_r2(23 downto 0) & current_input_r2(223 downto 24);
+            next_input_r3 <= current_input_r3(23 downto 0) & current_input_r3(223 downto 24);         
             
-            next_input_r1 <= current_input_r1;
-            next_input_r2 <= current_input_r2;
-            next_input_r3 <= current_input_r3;         
+            --next_input_r1 <= current_input_r1;
+            --next_input_r2 <= current_input_r2;
+            --next_input_r3 <= current_input_r3;         
             next_counter <= (others => '0');
             next_output_counter <= (others => '0');
             next_state <= s_idle;
@@ -824,6 +526,8 @@ conv_output4 <= output_k17 & output_k18 & output_k19 & output_k20;
 conv_output5 <= output_k21 & output_k22 & output_k23 & output_k24;
 conv_output6 <= output_k25 & output_k26 & output_k27 & output_k28;
 conv_output7 <= output_k29 & output_k30 & output_k31 & output_k32;
+input_kernel <= unsigned(current_input_r1(223 downto 200) & current_input_r2(223 downto 200) & current_input_r3(223 downto 200));
+
 --conv_output <= current_output_reg;
 
 end Behavioral;

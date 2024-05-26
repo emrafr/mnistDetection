@@ -1,26 +1,6 @@
 # Definitional proc to organize widgets for parameters.
 proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
-  #Adding Page
-  set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
-  ipgui::add_param $IPINST -name "C_M01_AXIS_TDATA_WIDTH" -parent ${Page_0} -widget comboBox
-  ipgui::add_param $IPINST -name "C_M01_AXIS_START_COUNT" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "C_M02_AXIS_TDATA_WIDTH" -parent ${Page_0} -widget comboBox
-  ipgui::add_param $IPINST -name "C_M02_AXIS_START_COUNT" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "C_M03_AXIS_TDATA_WIDTH" -parent ${Page_0} -widget comboBox
-  ipgui::add_param $IPINST -name "C_M03_AXIS_START_COUNT" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "C_M04_AXIS_TDATA_WIDTH" -parent ${Page_0} -widget comboBox
-  ipgui::add_param $IPINST -name "C_M04_AXIS_START_COUNT" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "C_M05_AXIS_TDATA_WIDTH" -parent ${Page_0} -widget comboBox
-  ipgui::add_param $IPINST -name "C_M05_AXIS_START_COUNT" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "C_M06_AXIS_TDATA_WIDTH" -parent ${Page_0} -widget comboBox
-  ipgui::add_param $IPINST -name "C_M06_AXIS_START_COUNT" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "C_M07_AXIS_TDATA_WIDTH" -parent ${Page_0} -widget comboBox
-  ipgui::add_param $IPINST -name "C_M07_AXIS_START_COUNT" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "C_S00_AXIS_TDATA_WIDTH" -parent ${Page_0} -widget comboBox
-  ipgui::add_param $IPINST -name "C_M00_AXIS_TDATA_WIDTH" -parent ${Page_0} -widget comboBox
-  ipgui::add_param $IPINST -name "C_M00_AXIS_START_COUNT" -parent ${Page_0}
-
 
 }
 
