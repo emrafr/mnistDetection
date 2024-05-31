@@ -76,6 +76,7 @@ def write_binary_numbers2(filename, filename2, filename3):
     with open(filename3, 'w') as file:
         for i in range(676):
             file.write(''.join(output_list2[i][:])+ '\n')
+    print(result.get('predicted'))
 
 def generate_fc(filename1, filename2):
 
@@ -134,7 +135,7 @@ def generate_fc_weights(filename1, filename2):
         for i in range(10):
             file.write(''.join(input_list2[i])+ '\n')
 
-def generate_mp(filename1, filename2):
+def generate_mp(filename1, filename2, filename3):
 
     image_index = 1
     input_data = np.expand_dims(fm.x_test[image_index], axis=0).astype(np.uint8)
@@ -146,7 +147,7 @@ def generate_mp(filename1, filename2):
 
     input_list = [[''] * 32 for i in range(676)]
     output_list = [[''] * 4 for i in range(1352)]
-    print(np.shape(post_relu))
+    output_list2 = [[''] * 8 for i in range(676)]
 
     r = 0
     for i in range(26):
@@ -162,7 +163,17 @@ def generate_mp(filename1, filename2):
             for c in range(8):
                 for k in range(4):
                     output_list[r][k] = format(post_mp[i,j,cl], '08b')
-                    print(i,j,cl)
+                    cl += 1
+                r += 1
+            cl = 0
+    
+        r = 0
+    cl = 0
+    for i in range(13):
+        for j in range(13):
+            for c in range(4):
+                for k in range(8):
+                    output_list2[r][k] = format(post_mp[i,j,cl], '08b')
                     cl += 1
                 r += 1
             cl = 0
@@ -176,8 +187,12 @@ def generate_mp(filename1, filename2):
         for i in range(1352):
             file.write(''.join(output_list[i][:])+ '\n')
 
+    with open(filename3, 'w') as file:
+        for i in range(676):
+            file.write(''.join(output_list2[i][:])+ '\n')
+
 if __name__ == "__main__":
-   # write_binary_numbers2("stimuli_data/full_conv_input.txt", "stimuli_data/full_conv_output.txt", "stimuli_data/full_conv_output_hex.txt")
+    write_binary_numbers2("stimuli_data/full_conv_input.txt", "stimuli_data/full_conv_output.txt", "stimuli_data/full_conv_output_hex.txt")
     #generate_fc("stimuli_data/fc_input.txt", "stimuli_data/fc_output.txt")
     #generate_fc_weights("stimuli_data/fc_weights.txt", "stimuli_data/fc_weights_wspaces.txt")
-    generate_mp("stimuli_data/mp_input.txt", "stimuli_data/mp_output.txt")
+    generate_mp("stimuli_data/mp_input.txt", "stimuli_data/mp_output.txt", "stimuli_data/mp_output2.txt")

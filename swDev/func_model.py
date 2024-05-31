@@ -121,10 +121,11 @@ def conv(I, K, bias,m1,m2):
                     for n in range(0,3):
                         res[0,i,j,k] = res[0,i,j,k] + I[0,i+m, j+n, 0]*K[k,m,n,0]
                         #res[0,i,j,k] = res[0,i,j,k] + (I[0,i+m, j+n, 0].astype(dtype=np.int32))*K[k,m,n,0].astype(dtype=np.int32)
-        res[0,:,:,k] =m1[0,k]*2**(-n_frac)*(res[0,:,:,k] + bias[k])
-    print(I[0,:,:,0])
-    print(res[0,:,:,4])
-    print(K[4,:,:,0])
+        #res[0,:,:,k] =m1[0,k]*2**(-n_frac)*(res[0,:,:,k] + bias[k])
+        res[0,:,:,k] =3*2**(-n_frac+22)*(res[0,:,:,k] + bias[k])
+    # print(I[0,:,:,0])
+    # print(res[0,:,:,4])
+    # print(K[4,:,:,0])
     return res
 
 def casttoint8(matrix):
@@ -296,8 +297,8 @@ def runOneInference():
     #print(result.get('post_relu')[0,:,:,0])
    
 vec = extractintM(s1,s2,s3,s4,sr,sw,si,sb, n_frac)
-print(vec[2])
-print(fc_bias)
-runOneInference()
-#runMultipleInference(10)
-#tf_inference(10)
+# print(vec[2])
+# print(fc_bias)
+# runOneInference()
+#runMultipleInference(100)
+#tf_inference(100)

@@ -43,9 +43,9 @@ signal output_k9, output_k10, output_k11, output_k12, output_k13, output_k14, ou
 signal output_k17, output_k18, output_k19, output_k20, output_k21, output_k22, output_k23, output_k24 : std_logic_vector(7 downto 0);
 signal output_k25, output_k26, output_k27, output_k28, output_k29, output_k30, output_k31, output_k32 : std_logic_vector(7 downto 0);
 signal next_output_reg, current_output_reg : std_logic_vector(7 downto 0);
-signal current_counter, next_counter : unsigned(4 downto 0);
+signal current_counter, next_counter : unsigned(5 downto 0);
 signal current_input_counter, next_input_counter : unsigned(1 downto 0);
-signal current_output_counter, next_output_counter : unsigned(2 downto 0);
+signal current_output_counter, next_output_counter : unsigned(3 downto 0);
 signal current_state, next_state : state_type;
 
 begin
@@ -459,64 +459,66 @@ end process;
 fsm : process(valid_input, current_state, current_output_reg, conv_input, current_input_r1, current_input_r2, current_input_r3, current_counter, current_output_counter)
 begin
 case current_state is
-    when s_idle =>
-        next_counter <= current_counter;
-        next_output_counter <= current_output_counter; 
-        valid_output <= '0';
-        if valid_input = '1' then
-            next_input_r3 <= conv_input;
-            next_input_r2 <= current_input_r3;
-            next_input_r1 <= current_input_r2;
-            if current_input_counter < 2 then
-                next_state <= s_idle;
-                next_input_counter <= current_input_counter + 1;
-                ready <= '1';
-            else
-                next_input_counter <= current_input_counter;
-                next_state <= s_2;
-                ready <= '1';
-            end if;
-        else
-            next_input_r1 <= current_input_r1;
-            next_input_r2 <= current_input_r2; 
-            next_input_r3 <= current_input_r3;
-            next_input_counter <= current_input_counter;
-            next_state <= s_idle;
-            ready <= '1';
-        end if;
-    when s_2 =>
-        next_input_counter <= current_input_counter;
-        if current_output_counter < 6 then
-            next_output_counter <= current_output_counter + 1;
-            valid_output <= '0';
-        else
-            next_output_counter <= current_output_counter;
-            valid_output <= '1';
-        end if;
-        --input_kernel <= unsigned(current_input_r1(223 downto 200) & current_input_r2(223 downto 200) & current_input_r3(223 downto 200));
-        next_output_reg <= output_k1;
+   when s_idle =>
+       next_counter <= current_counter;
+       next_output_counter <= current_output_counter; 
+       valid_output <= '0';
+       if valid_input = '1' then
+           next_input_r3 <= conv_input;
+           next_input_r2 <= current_input_r3;
+           next_input_r1 <= current_input_r2;
+           if current_input_counter < 2 then
+               next_state <= s_idle;
+               next_input_counter <= current_input_counter + 1;
+               ready <= '1';
+           else
+               next_input_counter <= current_input_counter;
+               next_state <= s_2;
+               ready <= '1';
+           end if;
+       else
+           next_input_r1 <= current_input_r1;
+           next_input_r2 <= current_input_r2; 
+           next_input_r3 <= current_input_r3;
+           next_input_counter <= current_input_counter;
+           next_state <= s_idle;
+           ready <= '1';
+       end if;
+   when s_2 =>
+       next_input_counter <= current_input_counter;
+       if current_output_counter < 6 then
+           next_output_counter <= current_output_counter + 1;
+           valid_output <= '0';
+       else
+           next_output_counter <= current_output_counter;
+           valid_output <= '1';
+       end if;
+       --input_kernel <= unsigned(current_input_r1(223 downto 200) & current_input_r2(223 downto 200) & current_input_r3(223 downto 200));
+       next_output_reg <= output_k1;
         
-        if current_counter = 31 then   
-            next_input_r1 <= current_input_r1(23 downto 0) & current_input_r1(223 downto 24);
-            next_input_r2 <= current_input_r2(23 downto 0) & current_input_r2(223 downto 24);
-            next_input_r3 <= current_input_r3(23 downto 0) & current_input_r3(223 downto 24);         
+       if current_counter = 31 then   
+           next_input_r1 <= current_input_r1(23 downto 0) & current_input_r1(223 downto 24);
+           next_input_r2 <= current_input_r2(23 downto 0) & current_input_r2(223 downto 24);
+           next_input_r3 <= current_input_r3(23 downto 0) & current_input_r3(223 downto 24);         
             
-            --next_input_r1 <= current_input_r1;
-            --next_input_r2 <= current_input_r2;
-            --next_input_r3 <= current_input_r3;         
-            next_counter <= (others => '0');
-            next_output_counter <= (others => '0');
-            next_state <= s_idle;
-            ready <= '0';
-        else
-            next_counter <= current_counter + 1;
-            next_input_r1 <= current_input_r1(215 downto 0) & current_input_r1(223 downto 216);
-            next_input_r2 <= current_input_r2(215 downto 0) & current_input_r2(223 downto 216);
-            next_input_r3 <= current_input_r3(215 downto 0) & current_input_r3(223 downto 216);
-            next_state <= s_2;
-            ready <= '0';
-        end if;
+           --next_input_r1 <= current_input_r1;
+           --next_input_r2 <= current_input_r2;
+           --next_input_r3 <= current_input_r3;         
+           next_counter <= (others => '0');
+           next_output_counter <= (others => '0');
+           next_state <= s_idle;
+           ready <= '0';
+       else
+           next_counter <= current_counter + 1;
+           next_input_r1 <= current_input_r1(215 downto 0) & current_input_r1(223 downto 216);
+           next_input_r2 <= current_input_r2(215 downto 0) & current_input_r2(223 downto 216);
+           next_input_r3 <= current_input_r3(215 downto 0) & current_input_r3(223 downto 216);
+           next_state <= s_2;
+           ready <= '0';
+       end if;
 end case;
+
+
 end process;
 conv_output0 <= output_k1 & output_k2 & output_k3 & output_k4;
 conv_output1 <= output_k5 & output_k6 & output_k7 & output_k8;
