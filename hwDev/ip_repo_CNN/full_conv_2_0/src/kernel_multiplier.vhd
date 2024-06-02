@@ -84,8 +84,11 @@ signal shiftd : signed(24 downto 0);
 --signal shift : signed(24 downto 0);
 --signal shiftd : signed(24 downto 0); 
 signal current_output : std_logic_vector(7 downto 0);
-signal i1,i2,i3,i4,i5,i6,i7,i8,i9 : signed(12 downto 0);
-signal r1,r2,r3,r4,r5,r6,r7,r8,r9 : signed(20 downto 0);
+signal i1,i2,i3,i4,i5,i6,i7,i8,i9 : signed(8 downto 0);
+--signal i1,i2,i3,i4,i5,i6,i7,i8,i9 : signed(12 downto 0);
+
+signal r1,r2,r3,r4,r5,r6,r7,r8,r9 : signed(16 downto 0);
+--signal r1,r2,r3,r4,r5,r6,r7,r8,r9 : signed(20 downto 0);
 signal r1d,r2d,r3d,r4d,r5d,r6d,r7d,r8d,r9d : signed(20 downto 0);
 signal res : signed(31 downto 0);
 signal resd : signed(31 downto 0);
@@ -102,10 +105,6 @@ r7 <= i7*weights_array(6);
 r8 <= i8*weights_array(7);
 r9 <= i9*weights_array(8);
 res <= r1d + r2d + r3d + r4d + r5d + r6d + r7d + r8d + r9d + bias;
---res <= r1 + r2 + r3 + r4 + r5 + r6 + r7 + r8 + r9 + bias;
---accum <= resd*s_scale;
---accum2 <= accumd;
---shift <= accumd2(56 downto 32);
 
 process(clk,reset, shiftd)
 begin
@@ -131,31 +130,29 @@ begin
             i9 <= (others => '0');
             resd <= (others => '0');
             accumd <= (others => '0');
-            accumd2 <= (others => '0');
             shiftd <= (others => '0');
             current_output <= (others => '0');
         else
-            i1 <= signed("00000" & input(71 downto 64));
-            i2 <= signed("00000" & input(63 downto 56)); 
-            i3 <= signed("00000" & input(55 downto 48));
-            i4 <= signed("00000" & input(47 downto 40));
-            i5 <= signed("00000" & input(39 downto 32));
-            i6 <= signed("00000" & input(31 downto 24));
-            i7 <= signed("00000" & input(23 downto 16));
-            i8 <= signed("00000" & input(15 downto 8));
-            i9 <= signed("00000" & input(7 downto 0));
-            r1d <= r1;
-            r2d <= r2;
-            r3d <= r3;
-            r4d <= r4;
-            r5d <= r5;
-            r6d <= r6;
-            r7d <= r7;
-            r8d <= r8;
-            r9d <= r9;
+            i1 <= signed("0" & input(71 downto 64));
+            i2 <= signed("0" & input(63 downto 56)); 
+            i3 <= signed("0" & input(55 downto 48));
+            i4 <= signed("0" & input(47 downto 40));
+            i5 <= signed("0" & input(39 downto 32));
+            i6 <= signed("0" & input(31 downto 24));
+            i7 <= signed("0" & input(23 downto 16));
+            i8 <= signed("0" & input(15 downto 8));
+            i9 <= signed("0" & input(7 downto 0));
+            r1d <= RESIZE(r1, 21);
+            r2d <= RESIZE(r2, 21);
+            r3d <= RESIZE(r3, 21);
+            r4d <= RESIZE(r4, 21);
+            r5d <= RESIZE(r5, 21);
+            r6d <= RESIZE(r6, 21);
+            r7d <= RESIZE(r7, 21);
+            r8d <= RESIZE(r8, 21);
+            r9d <= RESIZE(r9, 21);
             resd <= res;
             accumd <= resd*s_scale;
-            accumd2 <= accumd;
             shiftd <= accumd(34 downto 10);
             if shiftd < 0 then 
                 current_output <= (others => '0');
