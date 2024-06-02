@@ -167,7 +167,7 @@ def generate_mp(filename1, filename2, filename3):
                 r += 1
             cl = 0
     
-        r = 0
+    r = 0
     cl = 0
     for i in range(13):
         for j in range(13):
