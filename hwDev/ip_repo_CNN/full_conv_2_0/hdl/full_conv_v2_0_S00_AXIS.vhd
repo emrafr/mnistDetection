@@ -37,32 +37,11 @@ entity full_conv_v2_0_S00_AXIS is
 	);
 end full_conv_v2_0_S00_AXIS;
 
-architecture arch_imp of full_conv_v2_0_S00_AXIS is
-	-- function called clogb2 that returns an integer which has the 
-	-- value of the ceiling of the log base 2.
---	function clogb2 (bit_depth : integer) return integer is 
---	variable depth  : integer := bit_depth;
---	  begin
---	    if (depth = 0) then
---	      return(0);
---	    else
---	      for clogb2 in 1 to bit_depth loop  -- Works for up to 32 bit integers
---	        if(depth <= 1) then 
---	          return(clogb2);      
---	        else
---	          depth := depth / 2;
---	        end if;
---	      end loop;
---	    end if;
---	end;    
+architecture arch_imp of full_conv_v2_0_S00_AXIS is 
 
 	-- Total number of input data.
 	constant NUMBER_OF_INPUT_WORDS  : integer := 7;
-	-- bit_num gives the minimum number of bits needed to address 'NUMBER_OF_INPUT_WORDS' size of FIFO.
-	--constant bit_num  : integer := clogb2(NUMBER_OF_INPUT_WORDS-1);
-	-- Define the states of state machine
-	-- The control state machine oversees the writing of input streaming data to the FIFO,
-	-- and outputs the streaming data from the FIFO
+
 	type state is ( IDLE,        -- This is the initial/idle state 
 	                WRITE_FIFO); -- In this state FIFO is written with the
 	                             -- input stream data S_AXIS_TDATA 
@@ -78,8 +57,8 @@ architecture arch_imp of full_conv_v2_0_S00_AXIS is
 	signal fifo_full_flag : std_logic;
 	-- FIFO write pointer
 	signal write_pointer : integer range 0 to 7 ;
-	signal counter : integer range 0 to 1500 ;
-	signal counter2 : integer range 0 to 1500 ;
+	signal counter : integer range 0 to 1800 ;
+	signal counter2 : integer range 0 to 1800 ;
 	-- sink has accepted all the streaming data and stored in FIFO
 	signal writes_done : std_logic;
 	
@@ -107,7 +86,7 @@ begin
 	    else
 	       current_state <= next_state;
 	       current_row_reg <= next_row_reg;
-	       if counter2 < 1445 then
+	       if counter2 < 1800 then
 	           counter2 <= counter2 + 1;
 	       else
 	           counter2 <= 0;
@@ -116,8 +95,8 @@ begin
 	        when IDLE     => 
 	          -- The sink starts accepting tdata when 
 	          -- there tvalid is asserted to mark the
-	          -- presence of valid streaming data 
-	          if counter2 > 1443 then
+	          -- presence of 1798 streaming data 
+	          if counter2 > 1798 then
 	               counter <= 0;
 	          end if;
 	          if (S_AXIS_TVALID = '1' and counter < 187)then
