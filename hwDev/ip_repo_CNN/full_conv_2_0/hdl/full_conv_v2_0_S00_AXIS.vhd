@@ -40,26 +40,26 @@ end full_conv_v2_0_S00_AXIS;
 architecture arch_imp of full_conv_v2_0_S00_AXIS is
 	-- function called clogb2 that returns an integer which has the 
 	-- value of the ceiling of the log base 2.
-	function clogb2 (bit_depth : integer) return integer is 
-	variable depth  : integer := bit_depth;
-	  begin
-	    if (depth = 0) then
-	      return(0);
-	    else
-	      for clogb2 in 1 to bit_depth loop  -- Works for up to 32 bit integers
-	        if(depth <= 1) then 
-	          return(clogb2);      
-	        else
-	          depth := depth / 2;
-	        end if;
-	      end loop;
-	    end if;
-	end;    
+--	function clogb2 (bit_depth : integer) return integer is 
+--	variable depth  : integer := bit_depth;
+--	  begin
+--	    if (depth = 0) then
+--	      return(0);
+--	    else
+--	      for clogb2 in 1 to bit_depth loop  -- Works for up to 32 bit integers
+--	        if(depth <= 1) then 
+--	          return(clogb2);      
+--	        else
+--	          depth := depth / 2;
+--	        end if;
+--	      end loop;
+--	    end if;
+--	end;    
 
 	-- Total number of input data.
 	constant NUMBER_OF_INPUT_WORDS  : integer := 7;
 	-- bit_num gives the minimum number of bits needed to address 'NUMBER_OF_INPUT_WORDS' size of FIFO.
-	constant bit_num  : integer := clogb2(NUMBER_OF_INPUT_WORDS-1);
+	--constant bit_num  : integer := clogb2(NUMBER_OF_INPUT_WORDS-1);
 	-- Define the states of state machine
 	-- The control state machine oversees the writing of input streaming data to the FIFO,
 	-- and outputs the streaming data from the FIFO
@@ -77,7 +77,9 @@ architecture arch_imp of full_conv_v2_0_S00_AXIS is
 	-- FIFO full flag
 	signal fifo_full_flag : std_logic;
 	-- FIFO write pointer
-	signal write_pointer : integer range 0 to bit_num-1 ;
+	signal write_pointer : integer range 0 to 7 ;
+	signal counter : integer range 0 to 1500 ;
+	signal counter2 : integer range 0 to 1500 ;
 	-- sink has accepted all the streaming data and stored in FIFO
 	signal writes_done : std_logic;
 	
@@ -100,16 +102,27 @@ begin
 	      mst_exec_state      <= IDLE;
 	      current_row_reg <= (others => '0');
 	      current_state <= s_init;
+	      counter <= 0;
+	      counter2 <= 0;
 	    else
 	       current_state <= next_state;
 	       current_row_reg <= next_row_reg;
+	       if counter2 < 1445 then
+	           counter2 <= counter2 + 1;
+	       else
+	           counter2 <= 0;
+	       end if;
 	      case (mst_exec_state) is
 	        when IDLE     => 
 	          -- The sink starts accepting tdata when 
 	          -- there tvalid is asserted to mark the
 	          -- presence of valid streaming data 
-	          if (S_AXIS_TVALID = '1')then
+	          if counter2 > 1443 then
+	               counter <= 0;
+	          end if;
+	          if (S_AXIS_TVALID = '1' and counter < 187)then
 	            mst_exec_state <= WRITE_FIFO;
+	            --counter <= counter + 1;
 	          else
 	            mst_exec_state <= IDLE;
 	          end if;
@@ -122,6 +135,7 @@ begin
 	          else
 	            -- The sink accepts and stores tdata 
 	            -- into FIFO
+	            counter <= counter + 1;
 	            mst_exec_state <= WRITE_FIFO;
 	          end if;
 	        
@@ -176,20 +190,14 @@ begin
 
 	-- FIFO Implementation
 
-	 FIFO_GEN: for byte_index in 0 to (C_S_AXIS_TDATA_WIDTH/32-1) generate
-
-	 begin   
-	  -- Streaming input data is stored in FIFO
 	  process(S_AXIS_ACLK)
 	  begin
 	    if (rising_edge (S_AXIS_ACLK)) then
 	      if (fifo_wren = '1') then
-	        stream_data_fifo(write_pointer) <= S_AXIS_TDATA((byte_index*32+31) downto (byte_index*32));
+	        stream_data_fifo(write_pointer) <= S_AXIS_TDATA(31 downto 0);
 	      end if;  
 	    end  if;
 	  end process;
-
-	end generate FIFO_GEN;
 
 	-- Add user logic here
 process(writes_done, stream_data_fifo, ready_conv, current_row_reg, current_state)
@@ -208,13 +216,8 @@ when s_init =>
 when s_send_data =>
     output_valid <= '1';
     next_row_reg <= current_row_reg;
-
     if ready_conv = '1' then
         next_state <= s_init;
-
-        --next_row_reg <= stream_data_fifo(0) & stream_data_fifo(1) & stream_data_fifo(2) & stream_data_fifo(3) & stream_data_fifo(4) & stream_data_fifo(5) & stream_data_fifo(6);
-        --next_row_reg <= (others => '1');
-        --next_state <= s_init;
     else
         next_state <= s_send_data;
     end if;

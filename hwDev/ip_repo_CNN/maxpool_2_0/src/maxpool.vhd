@@ -7,6 +7,7 @@ entity maxpool is
     port(
         clk : in std_logic;
         reset : in std_logic;
+        fifo_full : in std_logic;
         valid_input : in std_logic;
         mp_input : in std_logic_vector(415 downto 0); --Two rows input
         mp_output : out std_logic_vector(7 downto 0);
@@ -55,21 +56,29 @@ begin
     end if;
 end process;
 
-fsm : process(valid_input, current_state, current_counter)
+fsm : process(valid_input, current_state, current_counter, fifo_full, current_input_r1, current_input_r2, mp_input)
 begin
 case current_state is
     when s_idle =>
-        ready <= '1';
-        valid_output <= '0'; --Add in conv as well
-        next_counter <= current_counter;
-        if valid_input = '1' then
-            next_input_r1 <= mp_input(415 downto 208);
-            next_input_r2 <= mp_input(207 downto 0);
-            next_state <= s_max;
-        else
+        valid_output <= '0'; 
+        if fifo_full = '1' then
+            ready <= '0';
             next_input_r1 <= current_input_r1;
             next_input_r2 <= current_input_r2;
             next_state <= s_idle;
+            next_counter <= current_counter;
+        else
+            ready <= '1';
+            next_counter <= current_counter;
+            if valid_input = '1' then
+                next_input_r1 <= mp_input(415 downto 208);
+                next_input_r2 <= mp_input(207 downto 0);
+                next_state <= s_max;
+            else
+                next_input_r1 <= current_input_r1;
+                next_input_r2 <= current_input_r2;
+                next_state <= s_idle;
+            end if;
         end if;
     when s_max =>
         ready <= '0';

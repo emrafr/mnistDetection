@@ -15,6 +15,7 @@ entity maxpool_v2_0_M00_AXIS is
 		C_M_START_COUNT	: integer	:= 32
 	);
 	port (
+	    valid_weights : out std_logic;
 	    mp_output : in std_logic_vector(255 downto 0);
 	    valid_output : in std_logic;
 				
@@ -24,7 +25,8 @@ entity maxpool_v2_0_M00_AXIS is
 		M_AXIS_TDATA	: out std_logic_vector(C_M_AXIS_TDATA_WIDTH-1 downto 0);
 		M_AXIS_TSTRB	: out std_logic_vector((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0);
 		M_AXIS_TLAST	: out std_logic;
-		M_AXIS_TREADY	: in std_logic
+		M_AXIS_TREADY	: in std_logic;
+		fifo_full : out  std_logic
 	);
 end maxpool_v2_0_M00_AXIS;
 
@@ -58,7 +60,7 @@ begin
 
 
 	-- Control state machine implementation                                               
-	process(M_AXIS_ACLK, incr_rp, incr_wp)                                                                        
+	process(M_AXIS_ACLK, incr_rp, incr_wp, write_pointer, read_pointer)                                                                        
 	begin                                                                                       
 	  if (rising_edge (M_AXIS_ACLK)) then                                                       
 	    if(M_AXIS_ARESETN = '0') then                                                           
@@ -76,47 +78,91 @@ begin
 	       current_counter2 <= next_counter2;
 	       current_output_reg <= next_output_reg;                                                                                                                                                                
 	       current_save_reg <= next_save_reg;
-	       if incr_rp = '1' then
-	           current_output_reg <= stream_data_fifo(read_pointer);
-	           read_pointer <= read_pointer + 1;
+	       
+	       if write_pointer < 169 then
+	           fifo_full <= '0';
+	           if incr_wp = '1' then
+                   stream_data_fifo(write_pointer) <= next_save_reg;
+                   write_pointer <= write_pointer + 1;
+               end if;
+                             
+               if incr_rp = '1' then
+                    if read_pointer < 1 then
+                        current_output_reg <= next_save_reg;
+                    else
+                       current_output_reg <= stream_data_fifo(read_pointer);
+                   end if;
+                   read_pointer <= read_pointer + 1;
+               else
+                    current_output_reg <= next_output_reg;
+               end if;
 	       else
-	           current_output_reg <= next_output_reg;
+	           fifo_full <= '1';
+	           if read_pointer < 169 then
+                   if incr_rp = '1' then
+                       current_output_reg <= stream_data_fifo(read_pointer);
+                       read_pointer <= read_pointer + 1;
+                   else
+                        current_output_reg <= next_output_reg;
+                   end if;
+	           else
+	               current_output_reg <= next_output_reg;
+	               write_pointer <= 0;
+	               read_pointer <= 0;
+	           end if;    
 	       end if;
-	       if incr_wp = '1' then
-	           stream_data_fifo(write_pointer) <= next_save_reg;
-	           write_pointer <= write_pointer + 1;               
-	       end if;                                                                                                                                                                
+	       
+	       
+--	       if incr_wp = '1' then
+--	           if write_pointer < 169 then
+--                   stream_data_fifo(write_pointer) <= next_save_reg;
+--                   write_pointer <= write_pointer + 1;
+--               else
+--                  stream_data_fifo(0) <= next_save_reg;
+--                  write_pointer <= 1;
+--               end if;
+--           else          
+--	           if write_pointer > 168 then
+--	               write_pointer <= 0;
+--               end if;                  
+--	       end if;
+	       
+--	       if incr_rp = '1' then
+--	           if read_pointer < 169 then
+--                   current_output_reg <= stream_data_fifo(read_pointer);
+--                   read_pointer <= read_pointer + 1;
+--	           else
+--                   current_output_reg <= stream_data_fifo(0);
+--                   read_pointer <= 1;
+--               end if;
+	               
+--	       else	           
+--	           if read_pointer < 169 then
+--                   current_output_reg <= next_output_reg;
+--	           else
+--                   current_output_reg <= next_output_reg;
+--                   read_pointer <= 0;
+--               end if;
+--	       end if;       
+                                                                                                                                                         
 	    end if;                                                                                 
 	  end if;                                                                                   
 	end process;
---	fifo_wren <= valid_output;
---    process(fifo_wren, M_AXIS_ACLK)
---	  begin
---	    if (rising_edge (M_AXIS_ACLK)) then
---	      if (fifo_wren = '1') then
---	        stream_data_fifo(write_pointer) <= current_save_reg;
---	        incr_wp <= '1' ;
---	      else
---	        incr_wp <= '0';
---	      end if;
---	    end  if;
---	end process;    
 	
-	process(current_counter, current_output_reg, valid_output, current_state, current_counter2, M_AXIS_TREADY, mp_output, read_pointer, write_pointer)
+	process(current_counter, current_output_reg, valid_output, current_state, current_counter2, M_AXIS_TREADY, mp_output, read_pointer, write_pointer, current_save_reg)
 	begin
 	case current_state is
 	when IDLE =>
 	   M_AXIS_TVALID	<= '0';
+	   valid_weights <= '0';
        next_counter <= current_counter;
        next_counter2 <= current_counter2;
---       next_save_reg <= current_save_reg;
        if valid_output = '1' then       
            next_output_reg <= mp_output;
-           next_save_reg <= current_save_reg;
+           next_save_reg <= mp_output;
            next_state <= SEND_STREAM;
-           --stream_data_fifo(write_pointer) <= mp_output;
-           incr_wp <= '0' ;
-           incr_rp <= '0';
+           incr_wp <= '1' ;
+           incr_rp <= '1';
        else
            next_output_reg <= current_output_reg;
            next_save_reg <= current_save_reg;
@@ -128,6 +174,7 @@ begin
        
 	when SEND_STREAM =>
 	   M_AXIS_TVALID	<= '1';
+	   valid_weights <= '1';
        if current_counter > 1350 then
            next_state <= IDLE;
            next_counter <=  (others => '0');
@@ -142,8 +189,6 @@ begin
                next_counter <= current_counter + 1;
 
                if current_counter2 > 6 then
---                    next_output_reg <= current_save_reg(1023 downto 768);
-                   -- next_output_reg <= stream_data_fifo(read_pointer);
                     next_output_reg <= current_output_reg;
                     incr_rp <= '1';
                     next_counter2 <= (others => '0');
@@ -161,7 +206,6 @@ begin
            
            if valid_output = '1' then
                 next_save_reg <= mp_output;
-                --stream_data_fifo(write_pointer) <= mp_output;
                 incr_wp <= '1' ;
            else
                 next_save_reg <= current_save_reg;

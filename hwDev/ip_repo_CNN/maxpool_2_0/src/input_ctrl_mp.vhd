@@ -77,11 +77,12 @@ begin
 	end process;
 
 	-- Add user logic here
-	process(current_state, S_AXIS_TVALID, current_counter, mp_ready, S_AXIS_TDATA )
+	process(current_state, S_AXIS_TVALID, current_counter, mp_ready, S_AXIS_TDATA, current_rows1, current_rows2, current_rows3, current_rows4 )
 	begin
 	case current_state is
         when s_idle =>
             S_AXIS_TREADY <= '0';
+--            S_AXIS_TREADY <= '1';
             valid_rows <= '0';
 --            next_rows1 <= current_rows1;
 --            next_rows2 <= current_rows2;

@@ -46,6 +46,7 @@ signal next_output_reg, current_output_reg : std_logic_vector(7 downto 0);
 signal current_counter, next_counter : unsigned(5 downto 0);
 signal current_input_counter, next_input_counter : unsigned(1 downto 0);
 signal current_output_counter, next_output_counter : unsigned(3 downto 0);
+signal current_big_counter, next_big_counter : unsigned(9 downto 0);
 signal current_state, next_state : state_type;
 
 begin
@@ -443,6 +444,7 @@ begin
         current_counter <= (others => '0');
         current_input_counter <= (others => '0');
         current_output_counter <= (others => '0');
+        current_big_counter <= (others => '0');
         current_state <= s_idle;
     elsif rising_edge(clk) then
         current_input_r1 <= next_input_r1;
@@ -452,16 +454,18 @@ begin
         current_counter <= next_counter;
         current_input_counter <= next_input_counter;
         current_output_counter <= next_output_counter;
+        current_big_counter <= next_big_counter;
         current_state <= next_state;
     end if;
 end process;
 
-fsm : process(valid_input, current_state, current_output_reg, conv_input, current_input_r1, current_input_r2, current_input_r3, current_counter, current_output_counter)
+fsm : process(valid_input, current_state, current_output_reg, conv_input, current_input_r1, current_input_r2, current_input_r3, current_counter, current_output_counter, current_big_counter)
 begin
 case current_state is
    when s_idle =>
        next_counter <= current_counter;
        next_output_counter <= current_output_counter; 
+       next_big_counter <= current_big_counter; 
        valid_output <= '0';
        if valid_input = '1' then
            next_input_r3 <= conv_input;
@@ -485,31 +489,34 @@ case current_state is
            ready <= '1';
        end if;
    when s_2 =>
-       next_input_counter <= current_input_counter;
-       if current_output_counter < 6 then
+       if current_output_counter < 10 then
            next_output_counter <= current_output_counter + 1;
            valid_output <= '0';
        else
            next_output_counter <= current_output_counter;
            valid_output <= '1';
        end if;
-       --input_kernel <= unsigned(current_input_r1(223 downto 200) & current_input_r2(223 downto 200) & current_input_r3(223 downto 200));
-       next_output_reg <= output_k1;
         
-       if current_counter = 31 then   
-           next_input_r1 <= current_input_r1(23 downto 0) & current_input_r1(223 downto 24);
-           next_input_r2 <= current_input_r2(23 downto 0) & current_input_r2(223 downto 24);
-           next_input_r3 <= current_input_r3(23 downto 0) & current_input_r3(223 downto 24);         
-            
-           --next_input_r1 <= current_input_r1;
-           --next_input_r2 <= current_input_r2;
-           --next_input_r3 <= current_input_r3;         
+       if current_counter = 35 then   
+           next_input_r1 <= current_input_r1(55 downto 0) & current_input_r1(223 downto 56);
+           next_input_r2 <= current_input_r2(55 downto 0) & current_input_r2(223 downto 56);
+           next_input_r3 <= current_input_r3(55 downto 0) & current_input_r3(223 downto 56);       
            next_counter <= (others => '0');
            next_output_counter <= (others => '0');
+           next_big_counter <= current_big_counter;
+           if current_big_counter < 910 then
+                next_big_counter <= current_big_counter;
+                next_input_counter <= current_input_counter;
+           else
+                next_big_counter <= (others => '0');
+                next_input_counter <= (others => '0');
+           end if;
            next_state <= s_idle;
            ready <= '0';
        else
+           next_input_counter <= current_input_counter;
            next_counter <= current_counter + 1;
+           next_big_counter <= current_big_counter + 1;
            next_input_r1 <= current_input_r1(215 downto 0) & current_input_r1(223 downto 216);
            next_input_r2 <= current_input_r2(215 downto 0) & current_input_r2(223 downto 216);
            next_input_r3 <= current_input_r3(215 downto 0) & current_input_r3(223 downto 216);

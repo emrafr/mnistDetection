@@ -90,8 +90,12 @@ signal i1,i2,i3,i4,i5,i6,i7,i8,i9 : signed(8 downto 0);
 signal r1,r2,r3,r4,r5,r6,r7,r8,r9 : signed(16 downto 0);
 --signal r1,r2,r3,r4,r5,r6,r7,r8,r9 : signed(20 downto 0);
 signal r1d,r2d,r3d,r4d,r5d,r6d,r7d,r8d,r9d : signed(20 downto 0);
+signal r1d2,r2d2,r3d2,r4d2,r5d2,r6d2,r7d2,r8d2,r9d2 : signed(20 downto 0);
+signal r1d3,r2d3,r3d3,r4d3,r5d3,r6d3,r7d3,r8d3,r9d3 : signed(20 downto 0);
 signal res : signed(31 downto 0);
 signal resd : signed(31 downto 0);
+signal resd2 : signed(31 downto 0);
+signal resd3 : signed(31 downto 0);
 
 begin
 
@@ -104,7 +108,7 @@ r6 <= i6*weights_array(5);
 r7 <= i7*weights_array(6);
 r8 <= i8*weights_array(7);
 r9 <= i9*weights_array(8);
-res <= r1d + r2d + r3d + r4d + r5d + r6d + r7d + r8d + r9d + bias;
+--res <= r1d + r2d + r3d + r4d + r5d + r6d + r7d + r8d + r9d + bias;
 
 process(clk,reset, shiftd)
 begin
@@ -119,6 +123,24 @@ begin
             r7d <= (others => '0');
             r8d <= (others => '0');
             r9d <= (others => '0');
+            r1d2 <= (others => '0');
+            r2d2 <= (others => '0');
+            r3d2 <= (others => '0');
+            r4d2 <= (others => '0');
+            r5d2 <= (others => '0');
+            r6d2 <= (others => '0');
+            r7d2 <= (others => '0');
+            r8d2 <= (others => '0');
+            r9d2 <= (others => '0');
+            r1d3 <= (others => '0');
+            r2d3 <= (others => '0');
+            r3d3 <= (others => '0');
+            r4d3 <= (others => '0');
+            r5d3 <= (others => '0');
+            r6d3 <= (others => '0');
+            r7d3 <= (others => '0');
+            r8d3 <= (others => '0');
+            r9d3 <= (others => '0');
             i1 <= (others => '0');
             i2 <= (others => '0');
             i3 <= (others => '0');
@@ -129,6 +151,8 @@ begin
             i8 <= (others => '0');
             i9 <= (others => '0');
             resd <= (others => '0');
+            resd2 <= (others => '0');
+            resd3 <= (others => '0');
             accumd <= (others => '0');
             shiftd <= (others => '0');
             current_output <= (others => '0');
@@ -151,8 +175,28 @@ begin
             r7d <= RESIZE(r7, 21);
             r8d <= RESIZE(r8, 21);
             r9d <= RESIZE(r9, 21);
-            resd <= res;
-            accumd <= resd*s_scale;
+            r1d2 <= r1d;
+            r2d2 <= r2d;
+            r3d2 <= r3d;
+            r4d2 <= r4d;
+            r5d2 <= r5d;
+            r6d2 <= r6d;
+            r7d2 <= r7d;
+            r8d2 <= r8d;
+            r9d2 <= r9d;
+            r1d3 <= r1d2;
+            r2d3 <= r2d2;
+            r3d3 <= r3d2;
+            r4d3 <= r4d2;
+            r5d3 <= r5d2;
+            r6d3 <= r6d2;
+            r7d3 <= r7d2;
+            r8d3 <= r8d2;
+            r9d3 <= r9d2;
+            resd <= r1d3 + r2d3 + r3d3 + r4d3 + r5d3 + r6d3 + r7d3 + r8d3 + r9d3 + bias;
+            resd2 <= resd;
+            resd3 <= resd2;
+            accumd <= resd3*s_scale;
             shiftd <= accumd(34 downto 10);
             if shiftd < 0 then 
                 current_output <= (others => '0');

@@ -39,7 +39,7 @@ def write_binary_numbers(filename, filename2):
 
 def write_binary_numbers2(filename, filename2, filename3):
 
-    image_index = 1
+    image_index = 3
     input_data = np.expand_dims(fm.x_test[image_index], axis=0).astype(np.uint8)
     input_data = np.expand_dims(input_data, axis=3)  # Add a channel dimension
     
@@ -80,7 +80,7 @@ def write_binary_numbers2(filename, filename2, filename3):
 
 def generate_fc(filename1, filename2):
 
-    image_index = 1
+    image_index = 3
     input_data = np.expand_dims(fm.x_test[image_index], axis=0).astype(np.uint8)
     input_data = np.expand_dims(input_data, axis=3)  # Add a channel dimension
     
@@ -193,6 +193,6 @@ def generate_mp(filename1, filename2, filename3):
 
 if __name__ == "__main__":
     write_binary_numbers2("stimuli_data/full_conv_input.txt", "stimuli_data/full_conv_output.txt", "stimuli_data/full_conv_output_hex.txt")
-    #generate_fc("stimuli_data/fc_input.txt", "stimuli_data/fc_output.txt")
+    generate_fc("stimuli_data/fc_input.txt", "stimuli_data/fc_output.txt")
     #generate_fc_weights("stimuli_data/fc_weights.txt", "stimuli_data/fc_weights_wspaces.txt")
-    generate_mp("stimuli_data/mp_input.txt", "stimuli_data/mp_output.txt", "stimuli_data/mp_output2.txt")
+    #generate_mp("stimuli_data/mp_input.txt", "stimuli_data/mp_output.txt", "stimuli_data/mp_output2.txt")

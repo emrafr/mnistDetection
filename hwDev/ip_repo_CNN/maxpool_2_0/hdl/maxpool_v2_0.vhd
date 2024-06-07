@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity maxpool_v2_0 is
 	generic (
 		-- Users to add parameters here
-
+    
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -40,7 +40,7 @@ entity maxpool_v2_0 is
 	);
 	port (
 		-- Users to add ports here
-
+        valid_weights : out std_logic;
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -305,6 +305,7 @@ architecture arch_imp of maxpool_v2_0 is
 		C_M_START_COUNT	: integer	:= 32
 		);
 		port (
+		valid_weights : out std_logic;
 	    mp_output : in std_logic_vector(255 downto 0);
 	    valid_output : in std_logic;
 		M_AXIS_ACLK	: in std_logic;
@@ -313,7 +314,8 @@ architecture arch_imp of maxpool_v2_0 is
 		M_AXIS_TDATA	: out std_logic_vector(C_M_AXIS_TDATA_WIDTH-1 downto 0);
 		M_AXIS_TSTRB	: out std_logic_vector((C_M_AXIS_TDATA_WIDTH/8)-1 downto 0);
 		M_AXIS_TLAST	: out std_logic;
-		M_AXIS_TREADY	: in std_logic
+		M_AXIS_TREADY	: in std_logic;
+        fifo_full : out std_logic
 		);
 	end component maxpool_v2_0_M00_AXIS;
 	
@@ -321,6 +323,7 @@ component maxpool_top is
   Port (
     clk : in std_logic;
     reset : in std_logic;
+    fifo_full : in std_logic;
     rows1  : in std_logic_vector(415 downto 0);
     rows2  : in std_logic_vector(415 downto 0);
     rows3  : in std_logic_vector(415 downto 0);
@@ -378,6 +381,7 @@ signal rows29, rows30, rows31, rows32 : std_logic_vector(415 downto 0);
 
 signal mp_ready :     std_logic;
 signal valid_output :     std_logic;
+signal fifo_full :     std_logic;
 signal mp_output :     std_logic_vector(255 downto 0);
 
 
@@ -560,6 +564,7 @@ maxpool_v2_0_M00_AXIS_inst : maxpool_v2_0_M00_AXIS
 		C_M_START_COUNT	=> C_M00_AXIS_START_COUNT
 	)
 	port map (
+	    valid_weights => valid_weights,
 	    mp_output    => mp_output,
 	    valid_output => valid_output,
 		M_AXIS_ACLK	=> m00_axis_aclk,
@@ -568,12 +573,14 @@ maxpool_v2_0_M00_AXIS_inst : maxpool_v2_0_M00_AXIS
 		M_AXIS_TDATA	=> m00_axis_tdata,
 		M_AXIS_TSTRB	=> m00_axis_tstrb,
 		M_AXIS_TLAST	=> m00_axis_tlast,
-		M_AXIS_TREADY	=> m00_axis_tready
+		M_AXIS_TREADY	=> m00_axis_tready,
+        fifo_full => fifo_full
 	);
 mp_top : maxpool_top
   Port map( 
     clk => s00_axis_aclk,
     reset => s00_axis_aresetn,
+    fifo_full => fifo_full,
     rows1  => rows1 ,
     rows2  => rows2 ,
     rows3  => rows3 ,
