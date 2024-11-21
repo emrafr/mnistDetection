@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 
-def write_binary_numbers2(filename, filename2):
+def generate_conv(inputfile, outputfile):
 
     image_index = random.randint(0,10000)
     input_data = np.expand_dims(fm.x_test[image_index], axis=0).astype(np.uint8)
@@ -19,7 +19,7 @@ def write_binary_numbers2(filename, filename2):
         for c in range(4):
             input_list[r][c] = format(input_data2[0,r,c,0], '08b')
 
-    with open(filename, 'w') as file:
+    with open(inputfile, 'w') as file:
         for i in range(196):
             file.write(''.join(input_list[i][:])+ '\n')
 
@@ -33,7 +33,7 @@ def write_binary_numbers2(filename, filename2):
                 output_list[r][c] = format(post_relu[i,j,c], '08b')
             r += 1
 
-    with open(filename2, 'w') as file:
+    with open(outputfile, 'w') as file:
         for i in range(676):
             file.write(''.join(output_list[i][:])+ '\n')
     print(result.get('predicted'))
@@ -152,7 +152,7 @@ def generate_mp(filename1, filename2, filename3):
             file.write(''.join(output_list2[i][:])+ '\n')
 
 if __name__ == "__main__":
-    write_binary_numbers2("stimuli_data/full_conv_input2.txt", "stimuli_data/full_conv_output2.txt")
+    generate_conv("stimuli_data/full_conv_input3.txt", "stimuli_data/full_conv_output3.txt")
     #generate_fc("stimuli_data/fc_input.txt", "stimuli_data/fc_output.txt")
     #generate_fc_weights("stimuli_data/fc_weights.txt", "stimuli_data/fc_weights_wspaces.txt")
     #generate_mp("stimuli_data/mp_input.txt", "stimuli_data/mp_output.txt", "stimuli_data/mp_output2.txt")
