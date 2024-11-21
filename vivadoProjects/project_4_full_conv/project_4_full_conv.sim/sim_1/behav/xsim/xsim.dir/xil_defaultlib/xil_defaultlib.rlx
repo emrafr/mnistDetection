@@ -1,0 +1,22 @@
+0.7
+2020.2
+May 22 2024
+18:54:44
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd,1732176425,vhdl,,,,design_1_wrapper,,,,,,,,
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.ip_user_files/bd/design_1/ip/design_1_full_conv_0_0/sim/design_1_full_conv_0_0.vhd,1732176425,vhdl,,,,design_1_full_conv_0_0,,,,,,,,
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.ip_user_files/bd/design_1/ipshared/967f/hdl/full_conv_v2_0.vhd,1732176425,vhdl,,,,full_conv_v2_0,,,,,,,,
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.ip_user_files/bd/design_1/ipshared/967f/hdl/full_conv_v2_0_M00_AXIS.vhd,1732176425,vhdl,,,,full_conv_v2_0_m00_axis,,,,,,,,
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.ip_user_files/bd/design_1/ipshared/967f/hdl/full_conv_v2_0_M01_AXIS.vhd,1732176425,vhdl,,,,full_conv_v2_0_m01_axis,,,,,,,,
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.ip_user_files/bd/design_1/ipshared/967f/hdl/full_conv_v2_0_M02_AXIS.vhd,1732176425,vhdl,,,,full_conv_v2_0_m02_axis,,,,,,,,
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.ip_user_files/bd/design_1/ipshared/967f/hdl/full_conv_v2_0_M03_AXIS.vhd,1732176425,vhdl,,,,full_conv_v2_0_m03_axis,,,,,,,,
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.ip_user_files/bd/design_1/ipshared/967f/hdl/full_conv_v2_0_M04_AXIS.vhd,1732176425,vhdl,,,,full_conv_v2_0_m04_axis,,,,,,,,
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.ip_user_files/bd/design_1/ipshared/967f/hdl/full_conv_v2_0_M05_AXIS.vhd,1732176425,vhdl,,,,full_conv_v2_0_m05_axis,,,,,,,,
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.ip_user_files/bd/design_1/ipshared/967f/hdl/full_conv_v2_0_M06_AXIS.vhd,1732176425,vhdl,,,,full_conv_v2_0_m06_axis,,,,,,,,
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.ip_user_files/bd/design_1/ipshared/967f/hdl/full_conv_v2_0_M07_AXIS.vhd,1732176425,vhdl,,,,full_conv_v2_0_m07_axis,,,,,,,,
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.ip_user_files/bd/design_1/ipshared/967f/hdl/full_conv_v2_0_S00_AXIS.vhd,1732176425,vhdl,,,,full_conv_v2_0_s00_axis,,,,,,,,
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.ip_user_files/bd/design_1/ipshared/967f/src/conv.vhd,1732176425,vhdl,,,,conv,,,,,,,,
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.ip_user_files/bd/design_1/ipshared/967f/src/kernel_multiplier.vhd,1732176425,vhdl,,,,kernel_multiplier,,,,,,,,
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.ip_user_files/bd/design_1/sim/design_1.vhd,1732176425,vhdl,,,,design_1,,,,,,,,
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.sim/sim_1/behav/xsim/glbl.v,1697210495,verilog,,,,glbl,,,,,,,,
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.srcs/sim_1/imports/emma/stimulus_generator_conv.vhd,1715695605,vhdl,,,,stimulus_generator_conv,,,,,,,,
+/home/emma/dev/vivadoProjects/project_4_full_conv/project_4_full_conv.srcs/sim_1/imports/emma/tb_full_conv_axi.vhd,1732176393,vhdl,,,,tb_full_conv_axi,,,,,,,,

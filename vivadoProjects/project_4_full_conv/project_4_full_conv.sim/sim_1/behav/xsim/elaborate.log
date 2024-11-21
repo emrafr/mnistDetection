@@ -1,0 +1,65 @@
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip -L xpm --snapshot tb_full_conv_axi_behav xil_defaultlib.tb_full_conv_axi -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_textio
+Compiling package unisim.vcomponents
+Compiling architecture behavioral of entity xil_defaultlib.stimulus_generator_conv [\stimulus_generator_conv(file_na...]
+Compiling architecture arch_imp of entity xil_defaultlib.full_conv_v2_0_S00_AXIS [full_conv_v2_0_s00_axis_default]
+Compiling architecture implementation of entity xil_defaultlib.full_conv_v2_0_M00_AXIS [full_conv_v2_0_m00_axis_default]
+Compiling architecture implementation of entity xil_defaultlib.full_conv_v2_0_M01_AXIS [full_conv_v2_0_m01_axis_default]
+Compiling architecture implementation of entity xil_defaultlib.full_conv_v2_0_M02_AXIS [full_conv_v2_0_m02_axis_default]
+Compiling architecture implementation of entity xil_defaultlib.full_conv_v2_0_M03_AXIS [full_conv_v2_0_m03_axis_default]
+Compiling architecture implementation of entity xil_defaultlib.full_conv_v2_0_M04_AXIS [full_conv_v2_0_m04_axis_default]
+Compiling architecture implementation of entity xil_defaultlib.full_conv_v2_0_M05_AXIS [full_conv_v2_0_m05_axis_default]
+Compiling architecture implementation of entity xil_defaultlib.full_conv_v2_0_M06_AXIS [full_conv_v2_0_m06_axis_default]
+Compiling architecture implementation of entity xil_defaultlib.full_conv_v2_0_M07_AXIS [full_conv_v2_0_m07_axis_default]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.kernel_multiplier [\kernel_multiplier(file_name="/h...]
+Compiling architecture behavioral of entity xil_defaultlib.conv [conv_default]
+Compiling architecture arch_imp of entity xil_defaultlib.full_conv_v2_0 [full_conv_v2_0_default]
+Compiling architecture design_1_full_conv_0_0_arch of entity xil_defaultlib.design_1_full_conv_0_0 [design_1_full_conv_0_0_default]
+Compiling architecture structure of entity xil_defaultlib.design_1 [design_1_default]
+Compiling architecture structure of entity xil_defaultlib.design_1_wrapper [design_1_wrapper_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_full_conv_axi
+Built simulation snapshot tb_full_conv_axi_behav

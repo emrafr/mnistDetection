@@ -1,0 +1,919 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Thu Nov 21 09:05:14 2024
+| Host         : debian running 64-bit Debian GNU/Linux 12 (bookworm)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_full_conv_0_0 (user.org:user:full_conv:2.0) from (Rev. 43) to (Rev. 33)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Mon Jun  3 21:02:53 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_full_conv_0_0 (user.org:user:full_conv:2.0) from (Rev. 42) to (Rev. 43)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Mon Jun  3 17:42:44 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_full_conv_0_0 (user.org:user:full_conv:2.0) from (Rev. 41) to (Rev. 42)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Mon Jun  3 16:34:25 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_full_conv_0_0 (user.org:user:full_conv:2.0) from (Rev. 39) to (Rev. 41)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Mon Jun  3 12:57:15 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_full_conv_0_0 (user.org:user:full_conv:2.0) from (Rev. 38) to (Rev. 39)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Mon Jun  3 12:54:39 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 38)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Mon Jun  3 12:45:38 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 38)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Mon Jun  3 12:31:43 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_full_conv_0_0 (user.org:user:full_conv:2.0) from (Rev. 37) to (Rev. 38)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Sun Jun  2 21:18:02 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 37)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Sun Jun  2 21:16:08 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 37)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Sun Jun  2 21:07:45 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_full_conv_0_0 (user.org:user:full_conv:2.0) from (Rev. 36) to (Rev. 37)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Sun Jun  2 21:01:01 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_full_conv_0_0 (user.org:user:full_conv:2.0) from (Rev. 35) to (Rev. 36)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Sun Jun  2 20:01:01 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_full_conv_0_0 (user.org:user:full_conv:2.0) from (Rev. 26) to (Rev. 35)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Fri May 31 02:45:58 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_full_conv_0_0 (user.org:user:full_conv:2.0) from (Rev. 25) to (Rev. 26)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Fri May 31 02:43:49 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 25)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Fri May 31 02:34:54 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 25)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu May 30 21:32:40 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 25)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu May 30 21:29:11 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 25)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu May 30 21:22:10 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 25)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu May 30 21:20:52 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 25)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu May 30 19:26:51 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 25)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu May 30 19:10:30 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_full_conv_0_0 (user.org:user:full_conv:2.0) from (Rev. 24) to (Rev. 25)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu May 30 18:26:45 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_full_conv_0_0 (user.org:user:full_conv:2.0) from (Rev. 23) to (Rev. 24)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu May 30 18:11:55 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_full_conv_0_0 (user.org:user:full_conv:2.0) from (Rev. 13) to (Rev. 23)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu May 23 16:32:16 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 13)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu May 23 16:02:03 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 13)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu May 23 15:58:58 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 13)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu May 23 15:35:26 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 13)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu May 23 15:08:18 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 13)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu May 23 15:05:12 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_full_conv_0_0 (user.org:user:full_conv:2.0) from (Rev. 3) to (Rev. 13)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Wed May 15 13:12:15 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 3)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Tue May 14 21:52:46 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 3)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Tue May 14 21:40:54 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 3)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Tue May 14 21:26:48 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 3)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Tue May 14 21:24:18 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 3)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Tue May 14 18:09:10 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 3)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Tue May 14 17:53:46 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 3)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Tue May 14 17:52:30 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 3)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Tue May 14 17:50:26 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 3)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Tue May 14 17:40:25 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 3)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Tue May 14 16:57:31 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 3)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Tue May 14 16:55:00 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 3)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Tue May 14 16:26:34 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 3)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Tue May 14 16:23:02 2024
+| Host         : scomputer-00 running 64-bit Debian GNU/Linux 11 (bullseye)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_full_conv_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_full_conv_0_0 (user.org:user:full_conv:2.0 (Rev. 3)) to current project options.
+

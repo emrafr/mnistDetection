@@ -1,0 +1,369 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xFA1E7CB45B4AC97",
+      "device": "xc7z020clg400-1",
+      "gen_directory": "../../../../project_4_full_conv.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2024.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "full_conv_0": ""
+    },
+    "ports": {
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "reset",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_1_clk",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "150000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "reset": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "s00_axis_tdata": {
+        "type": "data",
+        "direction": "I",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "s00_axis_tready": {
+        "direction": "O"
+      },
+      "m00_axis_tdata": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "m01_axis_tdata": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "m02_axis_tdata": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "m03_axis_tdata": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "m04_axis_tdata": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "m05_axis_tdata": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "m06_axis_tdata": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "m07_axis_tdata": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "tvalid_m": {
+        "direction": "O"
+      },
+      "m_axis_tready": {
+        "direction": "I"
+      },
+      "tvalid_m1": {
+        "direction": "O"
+      },
+      "tvalid_m2": {
+        "direction": "O"
+      },
+      "tvalid_m3": {
+        "direction": "O"
+      },
+      "tvalid_m4": {
+        "direction": "O"
+      },
+      "tvalid_m5": {
+        "direction": "O"
+      },
+      "tvalid_m6": {
+        "direction": "O"
+      },
+      "tvalid_m7": {
+        "direction": "O"
+      },
+      "s00_axis_tvalid": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "full_conv_0": {
+        "vlnv": "user.org:user:full_conv:2.0",
+        "ip_revision": "33",
+        "xci_name": "design_1_full_conv_0_0",
+        "xci_path": "ip/design_1_full_conv_0_0/design_1_full_conv_0_0.xci",
+        "inst_hier_path": "full_conv_0"
+      }
+    },
+    "nets": {
+      "clk_1": {
+        "ports": [
+          "clk",
+          "full_conv_0/s00_axis_aclk",
+          "full_conv_0/m00_axis_aclk",
+          "full_conv_0/m01_axis_aclk",
+          "full_conv_0/m02_axis_aclk",
+          "full_conv_0/m03_axis_aclk",
+          "full_conv_0/m04_axis_aclk",
+          "full_conv_0/m05_axis_aclk",
+          "full_conv_0/m06_axis_aclk",
+          "full_conv_0/m07_axis_aclk"
+        ]
+      },
+      "full_conv_0_m00_axis_tdata": {
+        "ports": [
+          "full_conv_0/m00_axis_tdata",
+          "m00_axis_tdata"
+        ]
+      },
+      "full_conv_0_m00_axis_tvalid": {
+        "ports": [
+          "full_conv_0/m00_axis_tvalid",
+          "tvalid_m"
+        ]
+      },
+      "full_conv_0_m01_axis_tdata": {
+        "ports": [
+          "full_conv_0/m01_axis_tdata",
+          "m01_axis_tdata"
+        ]
+      },
+      "full_conv_0_m01_axis_tvalid": {
+        "ports": [
+          "full_conv_0/m01_axis_tvalid",
+          "tvalid_m1"
+        ]
+      },
+      "full_conv_0_m02_axis_tdata": {
+        "ports": [
+          "full_conv_0/m02_axis_tdata",
+          "m02_axis_tdata"
+        ]
+      },
+      "full_conv_0_m02_axis_tvalid": {
+        "ports": [
+          "full_conv_0/m02_axis_tvalid",
+          "tvalid_m2"
+        ]
+      },
+      "full_conv_0_m03_axis_tdata": {
+        "ports": [
+          "full_conv_0/m03_axis_tdata",
+          "m03_axis_tdata"
+        ]
+      },
+      "full_conv_0_m03_axis_tvalid": {
+        "ports": [
+          "full_conv_0/m03_axis_tvalid",
+          "tvalid_m3"
+        ]
+      },
+      "full_conv_0_m04_axis_tdata": {
+        "ports": [
+          "full_conv_0/m04_axis_tdata",
+          "m04_axis_tdata"
+        ]
+      },
+      "full_conv_0_m04_axis_tvalid": {
+        "ports": [
+          "full_conv_0/m04_axis_tvalid",
+          "tvalid_m4"
+        ]
+      },
+      "full_conv_0_m05_axis_tdata": {
+        "ports": [
+          "full_conv_0/m05_axis_tdata",
+          "m05_axis_tdata"
+        ]
+      },
+      "full_conv_0_m05_axis_tvalid": {
+        "ports": [
+          "full_conv_0/m05_axis_tvalid",
+          "tvalid_m5"
+        ]
+      },
+      "full_conv_0_m06_axis_tdata": {
+        "ports": [
+          "full_conv_0/m06_axis_tdata",
+          "m06_axis_tdata"
+        ]
+      },
+      "full_conv_0_m06_axis_tvalid": {
+        "ports": [
+          "full_conv_0/m06_axis_tvalid",
+          "tvalid_m6"
+        ]
+      },
+      "full_conv_0_m07_axis_tdata": {
+        "ports": [
+          "full_conv_0/m07_axis_tdata",
+          "m07_axis_tdata"
+        ]
+      },
+      "full_conv_0_m07_axis_tvalid": {
+        "ports": [
+          "full_conv_0/m07_axis_tvalid",
+          "tvalid_m7"
+        ]
+      },
+      "full_conv_0_s00_axis_tready": {
+        "ports": [
+          "full_conv_0/s00_axis_tready",
+          "s00_axis_tready"
+        ]
+      },
+      "m_axis_tready_1": {
+        "ports": [
+          "m_axis_tready",
+          "full_conv_0/m00_axis_tready",
+          "full_conv_0/m01_axis_tready",
+          "full_conv_0/m02_axis_tready",
+          "full_conv_0/m03_axis_tready",
+          "full_conv_0/m04_axis_tready",
+          "full_conv_0/m05_axis_tready",
+          "full_conv_0/m06_axis_tready",
+          "full_conv_0/m07_axis_tready"
+        ]
+      },
+      "reset_1": {
+        "ports": [
+          "reset",
+          "full_conv_0/s00_axis_aresetn",
+          "full_conv_0/m00_axis_aresetn",
+          "full_conv_0/m01_axis_aresetn",
+          "full_conv_0/m02_axis_aresetn",
+          "full_conv_0/m03_axis_aresetn",
+          "full_conv_0/m04_axis_aresetn",
+          "full_conv_0/m05_axis_aresetn",
+          "full_conv_0/m06_axis_aresetn",
+          "full_conv_0/m07_axis_aresetn"
+        ]
+      },
+      "s00_axis_tdata_1": {
+        "ports": [
+          "s00_axis_tdata",
+          "full_conv_0/s00_axis_tdata"
+        ]
+      },
+      "s00_axis_tvalid_1": {
+        "ports": [
+          "s00_axis_tvalid",
+          "full_conv_0/s00_axis_tvalid"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_full_conv_axi_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_full_conv_axi" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="156.802 ns"></ZoomStartTime>
+      <ZoomEndTime time="868.803 ns"></ZoomEndTime>
+      <Cursor1Time time="2,985.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="204"></NameColumnWidth>
+      <ValueColumnWidth column_width="83"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="44" />
+   <wave_markers>
+      <marker label="" time="275000" />
+      <marker label="" time="575000" />
+      <marker label="" time="709140" />
+      <marker label="" time="770470" />
+      <marker label="" time="10265000" />
+      <marker label="" time="9885000" />
+   </wave_markers>
+   <wvobject type="logic" fp_name="/tb_full_conv_axi/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/ready">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/current_input_r1">
+      <obj_property name="ElementShortName">current_input_r1[223:0]</obj_property>
+      <obj_property name="ObjectShortName">current_input_r1[223:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/current_input_r2">
+      <obj_property name="ElementShortName">current_input_r2[223:0]</obj_property>
+      <obj_property name="ObjectShortName">current_input_r2[223:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/current_input_r3">
+      <obj_property name="ElementShortName">current_input_r3[223:0]</obj_property>
+      <obj_property name="ObjectShortName">current_input_r3[223:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/current_counter">
+      <obj_property name="ElementShortName">current_counter[5:0]</obj_property>
+      <obj_property name="ObjectShortName">current_counter[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/valid_input">
+      <obj_property name="ElementShortName">valid_input</obj_property>
+      <obj_property name="ObjectShortName">valid_input</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/current_state">
+      <obj_property name="ElementShortName">current_state</obj_property>
+      <obj_property name="ObjectShortName">current_state</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/kernel_27/input">
+      <obj_property name="ElementShortName">input[71:0]</obj_property>
+      <obj_property name="ObjectShortName">input[71:0]</obj_property>
+      <obj_property name="CustomSignalColor">#800080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/kernel_5/i9">
+      <obj_property name="ElementShortName">i9[8:0]</obj_property>
+      <obj_property name="ObjectShortName">i9[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/kernel_4/r9">
+      <obj_property name="ElementShortName">r9[16:0]</obj_property>
+      <obj_property name="ObjectShortName">r9[16:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/kernel_5/r9d">
+      <obj_property name="ElementShortName">r9d[20:0]</obj_property>
+      <obj_property name="ObjectShortName">r9d[20:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/kernel_5/r9d2">
+      <obj_property name="ElementShortName">r9d2[20:0]</obj_property>
+      <obj_property name="ObjectShortName">r9d2[20:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/kernel_5/r9d3">
+      <obj_property name="ElementShortName">r9d3[20:0]</obj_property>
+      <obj_property name="ObjectShortName">r9d3[20:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/kernel_5/resd">
+      <obj_property name="ElementShortName">resd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">resd[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/kernel_5/resd2">
+      <obj_property name="ElementShortName">resd2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">resd2[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/kernel_5/resd3">
+      <obj_property name="ElementShortName">resd3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">resd3[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/kernel_5/accumd">
+      <obj_property name="ElementShortName">accumd[34:0]</obj_property>
+      <obj_property name="ObjectShortName">accumd[34:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/kernel_5/shiftd">
+      <obj_property name="ElementShortName">shiftd[24:0]</obj_property>
+      <obj_property name="ObjectShortName">shiftd[24:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/kernel_5/current_output">
+      <obj_property name="ElementShortName">current_output[7:0]</obj_property>
+      <obj_property name="ObjectShortName">current_output[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/m01_axis_tdata">
+      <obj_property name="ElementShortName">m01_axis_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m01_axis_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/m01_axis_tdatad">
+      <obj_property name="ElementShortName">m01_axis_tdatad[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m01_axis_tdatad[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/true_output_data2">
+      <obj_property name="ElementShortName">true_output_data2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">true_output_data2[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_full_conv_axi/correct1">
+      <obj_property name="ElementShortName">correct1</obj_property>
+      <obj_property name="ObjectShortName">correct1</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_full_conv_axi/correct2">
+      <obj_property name="ElementShortName">correct2</obj_property>
+      <obj_property name="ObjectShortName">correct2</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_full_conv_axi/correct3">
+      <obj_property name="ElementShortName">correct3</obj_property>
+      <obj_property name="ObjectShortName">correct3</obj_property>
+      <obj_property name="CustomSignalColor">#0000FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_full_conv_axi/correct4">
+      <obj_property name="ElementShortName">correct4</obj_property>
+      <obj_property name="ObjectShortName">correct4</obj_property>
+      <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_full_conv_axi/correct5">
+      <obj_property name="ElementShortName">correct5</obj_property>
+      <obj_property name="ObjectShortName">correct5</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_full_conv_axi/correct6">
+      <obj_property name="ElementShortName">correct6</obj_property>
+      <obj_property name="ObjectShortName">correct6</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_full_conv_axi/correct7">
+      <obj_property name="ElementShortName">correct7</obj_property>
+      <obj_property name="ObjectShortName">correct7</obj_property>
+      <obj_property name="CustomSignalColor">#800080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_full_conv_axi/correct8">
+      <obj_property name="ElementShortName">correct8</obj_property>
+      <obj_property name="ObjectShortName">correct8</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_full_conv_axi/tvalid_m">
+      <obj_property name="ElementShortName">tvalid_m</obj_property>
+      <obj_property name="ObjectShortName">tvalid_m</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/valid_output">
+      <obj_property name="ElementShortName">valid_output</obj_property>
+      <obj_property name="ObjectShortName">valid_output</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/full_conv_v2_0_M00_AXIS_inst/out_ctrl_inst/write_pointer">
+      <obj_property name="ElementShortName">write_pointer</obj_property>
+      <obj_property name="ObjectShortName">write_pointer</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/full_conv_v2_0_M00_AXIS_inst/out_ctrl_inst/read_pointer">
+      <obj_property name="ElementShortName">read_pointer</obj_property>
+      <obj_property name="ObjectShortName">read_pointer</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/full_conv_v2_0_M00_AXIS_inst/out_ctrl_inst/current_counter">
+      <obj_property name="ElementShortName">current_counter[10:0]</obj_property>
+      <obj_property name="ObjectShortName">current_counter[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/full_conv_v2_0_M00_AXIS_inst/out_ctrl_inst/M_AXIS_TVALID">
+      <obj_property name="ElementShortName">M_AXIS_TVALID</obj_property>
+      <obj_property name="ObjectShortName">M_AXIS_TVALID</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/full_conv_v2_0_M00_AXIS_inst/out_ctrl_inst/stream_data_fifo">
+      <obj_property name="ElementShortName">stream_data_fifo[0:26][31:0]</obj_property>
+      <obj_property name="ObjectShortName">stream_data_fifo[0:26][31:0]</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/current_state">
+      <obj_property name="ElementShortName">current_state</obj_property>
+      <obj_property name="ObjectShortName">current_state</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/current_counter">
+      <obj_property name="ElementShortName">current_counter[5:0]</obj_property>
+      <obj_property name="ObjectShortName">current_counter[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_full_conv_axi/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/current_input_counter">
+      <obj_property name="ElementShortName">current_input_counter[1:0]</obj_property>
+      <obj_property name="ObjectShortName">current_input_counter[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/current_output_counter">
+      <obj_property name="ElementShortName">current_output_counter[3:0]</obj_property>
+      <obj_property name="ObjectShortName">current_output_counter[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_full_conv_axi/DUT/design_1_i/full_conv_0/U0/conv_inst/current_big_counter">
+      <obj_property name="ElementShortName">current_big_counter[9:0]</obj_property>
+      <obj_property name="ObjectShortName">current_big_counter[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
